@@ -316,6 +316,10 @@ public class TrendCheck {
 		return dateFormat.format(date); 
 	}
 	
+	String formattedDateTime(Date date)
+	{   SimpleDateFormat dateTimeFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss", Locale.GERMAN);
+		return dateTimeFormat.format(date); 
+	}
 	void writeOutput(File outputFile){
 		outputFile.append("<br/>trendnah: $nears.size<br/>")
 		Collections.sort(nears)
@@ -372,21 +376,21 @@ public class TrendCheck {
 		trendCheck.SIGNIFICANT_DISTANCE = days / 6
 
 		ArrayList<Stock> stocks = new ArrayList<Stock>()
-		File stocksFile = new File("C:\\Users\\seeste\\workspace_groovy\\TrendChecker2\\src\\stocks.csv")
+		File stocksFile = new File("stocks.csv")
 		trendCheck.importStocks(stocks, stocksFile)
 
 		stocks.each { println it.symbol }
 
-		File outputFile = new File('C:\\Users\\seeste\\workspace_groovy\\TrendChecker2\\src\\output.html')
-		String today = trendCheck.formattedDate(new Date())
-		if (trendCheck.relevant == StockValue.CLOSE)
-			outputFile.write("<p><b>Schlusskurse $trendCheck.MONTH Monate $today</b></p>\n")
-		else
-			outputFile.write("<p><b>Tiefstkurse $trendCheck.MONTH Monate $today</b></p>\n")
+		File outputFile = new File('output.html')
+		String today = trendCheck.formattedDateTime(new Date())
 
 		for (int i = 0; i < stocks.size(); i++) {
 			trendCheck.check(stocks.get(i),days)
 		}
+		if (trendCheck.relevant == StockValue.CLOSE)
+			outputFile.write("<p><b>Schlusskurse $trendCheck.MONTH Monate $today</b></p>\n")
+		else
+			outputFile.write("<p><b>Tiefstkurse $trendCheck.MONTH Monate $today</b></p>\n")
 		trendCheck.writeOutput(outputFile)
 		println "fertig mit $stocks.size Werten"
 	}
