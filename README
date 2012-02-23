@@ -1,0 +1,3 @@
+The trendchecker checks the stocks from stocks.csv for their trends.
+It reports the distance of the current value from the trendline.
+This report is written to the output.html.
