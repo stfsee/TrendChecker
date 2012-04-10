@@ -303,10 +303,10 @@ public class TrendCheck {
 		String start = formattedDate(values.get(trend.startX).date);
 		double trendDiff = trendDiff(lastTrendValue, currentPrice)
 		if (isNear(trendDiff) ) {
-			nears << new OutputInfo(stock,MONTH,start,lastTrendValueFormatted,trendDiff,currentPrice)
+			nears << new OutputInfo(stock,MONTH,start,lastTrendValueFormatted,trendDiff,currentPrice,values)
 		}
 		else {
-			notNears << new OutputInfo(stock,MONTH,start,lastTrendValueFormatted,trendDiff,currentPrice)
+			notNears << new OutputInfo(stock,MONTH,start,lastTrendValueFormatted,trendDiff,currentPrice,values)
 		}
 		
 	}
