@@ -76,23 +76,55 @@ class OutputInfo implements Comparable{
 		return false
 	}
 	
+	boolean isUpTrend()
+	{
+		return (last.close > (values.get(values.size-5)).close)
+	}
+	
+	boolean isDownTrend()
+	{
+		return !isUpTrend()
+	}
+	
 	void checkHammer()
 	{
-		if (hasHammerShape() && last.close < (values.get(values.size-5)).low)
+		if (hasHammerShape() && isDownTrend())
 		{
 			this.candleTitle = candleTitle+"Hammer: Untere Umkehr, kurzer Körper, der oben sitzt. "
 			this.candleInfo = candleInfo+"Hammer "
 		}
-		if (hasHammerShape() && last.close > (values.get(values.size-5)).high)
+		if (hasHammerShape() && isUpTrend())
 		{
-			this.candleTitle = candleTitle+"Hanging Man: Obere Umkehr, kurzer Körper, der oben sitzt. "
-			this.candleInfo = candleInfo+"Hanging Man "
+			this.candleTitle = candleTitle+"Hanging Man: \nObere Umkehr, kurzer Körper, der oben sitzt."
+			this.candleInfo = candleInfo+" Hanging Man "
+		}
+	}
+	
+	void checkEngulfing()
+	{
+		StockValue secondToLast = values.get(values.size-2)
+		if (isDownTrend())
+		{
+			if (last.open < secondToLast.close && last.close > secondToLast.open && last.close > last.open && secondToLast.open > secondToLast.close)
+			{
+				this.candleTitle = candleTitle+"Bullish Engulfing: \nUntere Umkehr, zweiter Körper weiß, erster schwarz, zweiter umhüllt ersten. $last.close"
+				this.candleInfo = candleInfo+" Bullish Engulfing "
+			}
+		}
+		else
+		{
+			if (last.open > secondToLast.close && last.close < secondToLast.open && last.close < last.open && secondToLast.open < secondToLast.close)
+			{
+				this.candleTitle = candleTitle+"Bearish Engulfing: \nObere Umkehr, Zweiter Körper schwarz, erster weiß, zweiter umhüllt ersten. $last.close"
+				this.candleInfo = candleInfo+" Bearish Engulfing "
+			}
 		}
 	}
 
 	void checkCandles()
 	{
 		checkHammer()
+		checkEngulfing()
 	}
 	
 	String getOutputLinesWithTrends() {
@@ -103,9 +135,9 @@ class OutputInfo implements Comparable{
 		outLine.append "<div title=\""
 		outLine.append candleTitle
 		outLine.append "\">"
-		outLine.append "Trend startet am: "+formattedStartDate+", letzter Wert = "+formattedLastValue
-		outLine.append(", Letzter Close: ")
-		outLine.append last.close + " "
+		outLine.append "Trendstart: "+formattedStartDate+", letzter Wert = "+formattedLastValue
+		//outLine.append(", Letzter Close: ")
+		//outLine.append last.close + " "
 		if (candleInfo.size() > 1)
 		{
 			outLine.append ("<font color=\"#FF0000\">")
