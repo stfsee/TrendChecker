@@ -1,0 +1,1406 @@
+^GDAXI
+^TECDAX
+^MDAXI
+^SDAXI
+^STOXX50E
+^BSESN
+ADS.DE
+ADV.DE
+AIXA.DE
+AMZ.DE
+AMD.SG
+APC.DE
+BC8.DE
+AFX.DE
+CWC.DE
+COM.DE
+DB1.DE
+DPW.DE
+DTE.DE
+DLG.DE
+DRI.DE
+FIE.DE
+GXI.DE
+AQU.DE
+GIL.DE
+GGQ1.DE
+HNR1.DE
+HHFA.DE
+IBM.DE
+IFX.DE
+INL.SG
+JEN.DE
+KD8.DE
+MDN.DE
+MEO.DE
+MSF.DE
+MUV2.DE
+NOA3.DE
+NDX1.DE
+ORC.DE
+PSM.DE
+PUM.DE
+SAP.DE
+SNG.DE
+SZZ.DE
+SOW.DE
+SWV.DE
+SMHN.SG
+VWS.DE
+WIN.DE
+WDI.DE
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Current value from yfs_110
+Price: 6.918,11
+Trying: ^GDAXI
+aktueller Preis: 6918.11
+Kleinster Wert Datum: Mon Sep 12 00:00:00 CEST 2011 Wert:5072.33
+Maximum: 6948.3
+inc=6.253233333333334
+Trying to find line, start 139 = Mon Sep 12 00:00:00 CEST 2011
+Berï¿½hrung bei 192
+Datum: Thu Nov 24 00:00:00 CET 2011, Open: 5512.77, High: 5563.77, Low: 5399.9, Close: 5428.15, Relevant: 5428.15
+Trying to find line, start 192 = Thu Nov 24 00:00:00 CET 2011
+Berï¿½hrung bei 215
+Datum: Wed Dec 28 00:00:00 CET 2011, Open: 5875.87, High: 5901.35, Low: 5771.27, Close: 5771.27, Relevant: 5771.27
+Trying to find line, start 215 = Wed Dec 28 00:00:00 CET 2011
+Berï¿½hrung bei 250
+Datum: Thu Feb 16 00:00:00 CET 2012, Open: 6665.24, High: 6751.96, Low: 6651.72, Close: 6751.96, Relevant: 6751.96
+Trying to find line, start 250 = Thu Feb 16 00:00:00 CET 2012
+COULD NOT FIND LONG TREND, TAKING LAST TREND
+-----------TREND--------------
+von: Wed Dec 28 00:00:00 CET 2011 5771.27
+bis: Thu Feb 16 00:00:00 CET 2012 6751.96
+-----------TREND--------------
+X: 215, Y: 5771.27, Steigung: 28.13955000000007, Berührung: 250
+
+
+
+Anzahl Werte: 258
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Current value from yfs_110
+Price: 778,12
+Trying: ^TECDAX
+aktueller Preis: 778.12
+Kleinster Wert Datum: Tue Oct 04 00:00:00 CEST 2011 Wert:626.22
+Maximum: 792.49
+inc=0.5542333333333332
+Trying to find line, start 154 = Tue Oct 04 00:00:00 CEST 2011
+Berï¿½hrung bei 190
+Datum: Wed Nov 23 00:00:00 CET 2011, Open: 640.65, High: 645.62, Low: 635.42, Close: 636.25, Relevant: 636.25
+Trying to find line, start 190 = Wed Nov 23 00:00:00 CET 2011
+Berï¿½hrung bei 208
+Datum: Mon Dec 19 00:00:00 CET 2011, Open: 659.91, High: 665.14, Low: 656.07, Close: 660.0, Relevant: 660.0
+Trying to find line, start 208 = Mon Dec 19 00:00:00 CET 2011
+Berï¿½hrung bei 237
+Datum: Mon Jan 30 00:00:00 CET 2012, Open: 741.22, High: 745.76, Low: 736.61, Close: 737.54, Relevant: 737.54
+Trying to find line, start 237 = Mon Jan 30 00:00:00 CET 2012
+COULD NOT FIND LONG TREND, TAKING LAST TREND
+-----------TREND--------------
+von: Mon Dec 19 00:00:00 CET 2011 660.0
+bis: Mon Jan 30 00:00:00 CET 2012 737.54
+-----------TREND--------------
+X: 208, Y: 660.0, Steigung: 2.6829931818181745, Berührung: 237
+
+
+
+Anzahl Werte: 258
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Current value from yfs_110
+Price: 10.454,44
+Trying: ^MDAXI
+aktueller Preis: 10454.44
+Kleinster Wert Datum: Tue Oct 04 00:00:00 CEST 2011 Wert:7783.14
+Maximum: 10584.75
+inc=9.3387
+Trying to find line, start 154 = Tue Oct 04 00:00:00 CEST 2011
+Berï¿½hrung bei 190
+Datum: Wed Nov 23 00:00:00 CET 2011, Open: 8146.29, High: 8281.55, Low: 8105.78, Close: 8105.78, Relevant: 8105.78
+Trying to find line, start 190 = Wed Nov 23 00:00:00 CET 2011
+Berï¿½hrung bei 208
+Datum: Mon Dec 19 00:00:00 CET 2011, Open: 8475.86, High: 8596.97, Low: 8462.93, Close: 8490.89, Relevant: 8490.89
+Trying to find line, start 208 = Mon Dec 19 00:00:00 CET 2011
+Berï¿½hrung bei 250
+Datum: Thu Feb 16 00:00:00 CET 2012, Open: 10298.9, High: 10303.17, Low: 10157.45, Close: 10296.71, Relevant: 10296.71
+Trying to find line, start 250 = Thu Feb 16 00:00:00 CET 2012
+COULD NOT FIND LONG TREND, TAKING LAST TREND
+-----------TREND--------------
+von: Mon Dec 19 00:00:00 CET 2011 8490.89
+bis: Thu Feb 16 00:00:00 CET 2012 10296.71
+-----------TREND--------------
+X: 208, Y: 8490.89, Steigung: 43.085365909090974, Berührung: 250
+
+
+
+Anzahl Werte: 258
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Current value from yfs_110
+Price: 5.129,65
+Trying: ^SDAXI
+aktueller Preis: 5129.65
+Kleinster Wert Datum: Tue Oct 04 00:00:00 CEST 2011 Wert:4133.47
+Maximum: 5135.39
+inc=3.3397333333333337
+Trying to find line, start 154 = Tue Oct 04 00:00:00 CEST 2011
+Berï¿½hrung bei 190
+Datum: Wed Nov 23 00:00:00 CET 2011, Open: 4223.94, High: 4232.85, Low: 4178.04, Close: 4178.04, Relevant: 4178.04
+Trying to find line, start 190 = Wed Nov 23 00:00:00 CET 2011
+Berï¿½hrung bei 208
+Datum: Mon Dec 19 00:00:00 CET 2011, Open: 4233.82, High: 4259.13, Low: 4228.97, Close: 4232.06, Relevant: 4232.06
+Trying to find line, start 208 = Mon Dec 19 00:00:00 CET 2011
+Berï¿½hrung bei 226
+Datum: Fri Jan 13 00:00:00 CET 2012, Open: 4489.27, High: 4518.39, Low: 4447.19, Close: 4474.02, Relevant: 4474.02
+Trying to find line, start 226 = Fri Jan 13 00:00:00 CET 2012
+Berï¿½hrung bei 250
+Datum: Thu Feb 16 00:00:00 CET 2012, Open: 4995.32, High: 4995.32, Low: 4962.56, Close: 4989.81, Relevant: 4989.81
+Trying to find line, start 250 = Thu Feb 16 00:00:00 CET 2012
+COULD NOT FIND LONG TREND, TAKING LAST TREND
+-----------TREND--------------
+von: Fri Jan 13 00:00:00 CET 2012 4474.02
+bis: Thu Feb 16 00:00:00 CET 2012 4989.81
+-----------TREND--------------
+X: 226, Y: 4474.02, Steigung: 21.579815384615454, Berührung: 250
+
+
+
+Anzahl Werte: 258
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Current value from yfs_110
+Price: 2.531,58
+Trying: ^STOXX50E
+aktueller Preis: 2531.58
+Kleinster Wert Datum: Mon Sep 12 00:00:00 CEST 2011 Wert:1995.01
+Maximum: 2550.28
+inc=1.8509000000000007
+Trying to find line, start 138 = Mon Sep 12 00:00:00 CEST 2011
+Berï¿½hrung bei 191
+Datum: Thu Nov 24 00:00:00 CET 2011, Open: 2108.42, High: 2134.33, Low: 2076.65, Close: 2090.25, Relevant: 2090.25
+Trying to find line, start 191 = Thu Nov 24 00:00:00 CET 2011
+Berï¿½hrung bei 222
+Datum: Mon Jan 09 00:00:00 CET 2012, Open: 2301.15, High: 2312.86, Low: 2279.73, Close: 2286.45, Relevant: 2286.45
+Trying to find line, start 222 = Mon Jan 09 00:00:00 CET 2012
+Berï¿½hrung bei 250
+Datum: Thu Feb 16 00:00:00 CET 2012, Open: 2480.74, High: 2489.35, Low: 2454.98, Close: 2489.35, Relevant: 2489.35
+Trying to find line, start 250 = Thu Feb 16 00:00:00 CET 2012
+COULD NOT FIND LONG TREND, TAKING LAST TREND
+-----------TREND--------------
+von: Mon Jan 09 00:00:00 CET 2012 2286.45
+bis: Thu Feb 16 00:00:00 CET 2012 2489.35
+-----------TREND--------------
+X: 222, Y: 2286.45, Steigung: 7.280206666666657, Berührung: 250
+
+
+
+Anzahl Werte: 247
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Current value from yfs_110
+Price: 17.732,01
+Trying: ^BSESN
+aktueller Preis: 17732.01
+Kleinster Wert Datum: Tue Dec 20 00:00:00 CET 2011 Wert:15175.08
+Maximum: 18428.61
+inc=10.845100000000002
+Trying to find line, start 199 = Tue Dec 20 00:00:00 CET 2011
+Berï¿½hrung bei 217
+Datum: Mon Jan 16 00:00:00 CET 2012, Open: 16086.74, High: 16214.36, Low: 16037.6, Close: 16189.36, Relevant: 16189.36
+Trying to find line, start 217 = Mon Jan 16 00:00:00 CET 2012
+Berï¿½hrung bei 237
+Datum: Tue Feb 14 00:00:00 CET 2012, Open: 17767.46, High: 17890.33, Low: 17742.58, Close: 17848.57, Relevant: 17848.57
+Trying to find line, start 237 = Tue Feb 14 00:00:00 CET 2012
+COULD NOT FIND LONG TREND, TAKING LAST TREND
+-----------TREND--------------
+von: Mon Jan 16 00:00:00 CET 2012 16189.36
+bis: Tue Feb 14 00:00:00 CET 2012 17848.57
+-----------TREND--------------
+X: 217, Y: 16189.36, Steigung: 83.14576666666669, Berührung: 237
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 59,03
+Trying: ADS.DE
+aktueller Preis: 59.03
+Kleinster Wert Datum: Fri Mar 18 00:00:00 CET 2011 Wert:43.22
+Maximum: 60.34
+inc=0.05706666666666668
+Trying to find line, start 14 = Fri Mar 18 00:00:00 CET 2011
+Berï¿½hrung bei 154
+Datum: Tue Oct 04 00:00:00 CEST 2011, Open: 44.19, High: 44.61, Low: 42.85, Close: 43.95, Relevant: 43.95
+-----------TREND--------------
+von: Fri Mar 18 00:00:00 CET 2011 43.22
+bis: Tue Oct 04 00:00:00 CEST 2011 43.95
+-----------TREND--------------
+X: 14, Y: 43.22, Steigung: 0.0052529986052998615, Berührung: 154
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 4,76
+Trying: ADV.DE
+aktueller Preis: 4.76
+Kleinster Wert Datum: Thu Sep 22 00:00:00 CEST 2011 Wert:3.08
+Maximum: 4.76
+inc=0.005599999999999999
+Trying to find line, start 146 = Thu Sep 22 00:00:00 CEST 2011
+Berï¿½hrung bei 208
+Datum: Mon Dec 19 00:00:00 CET 2011, Open: 3.45, High: 3.51, Low: 3.34, Close: 3.39, Relevant: 3.39
+-----------TREND--------------
+von: Thu Sep 22 00:00:00 CEST 2011 3.08
+bis: Mon Dec 19 00:00:00 CET 2011 3.39
+-----------TREND--------------
+X: 146, Y: 3.08, Steigung: 0.005024299065420559, Berührung: 208
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 13,20
+Trying: AIXA.DE
+aktueller Preis: 13.2
+Kleinster Wert Datum: Wed Nov 23 00:00:00 CET 2011 Wert:8.36
+Maximum: 15.6
+inc=0.024133333333333333
+Trying to find line, start 190 = Wed Nov 23 00:00:00 CET 2011
+Berï¿½hrung bei 208
+Datum: Mon Dec 19 00:00:00 CET 2011, Open: 8.85, High: 9.19, Low: 8.77, Close: 9.01, Relevant: 9.01
+Trying to find line, start 208 = Mon Dec 19 00:00:00 CET 2011
+Berï¿½hrung bei 238
+Datum: Tue Jan 31 00:00:00 CET 2012, Open: 10.5, High: 10.59, Low: 10.25, Close: 10.31, Relevant: 10.31
+Trying to find line, start 238 = Tue Jan 31 00:00:00 CET 2012
+COULD NOT FIND LONG TREND, TAKING LAST TREND
+-----------TREND--------------
+von: Mon Dec 19 00:00:00 CET 2011 9.01
+bis: Tue Jan 31 00:00:00 CET 2012 10.31
+-----------TREND--------------
+X: 208, Y: 9.01, Steigung: 0.043440000000000006, Berührung: 238
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 136,50
+Trying: AMZ.DE
+aktueller Preis: 136.5
+Kleinster Wert Datum: Fri Mar 18 00:00:00 CET 2011 Wert:114.0
+Maximum: 177.15
+inc=0.21050000000000002
+Trying to find line, start 14 = Fri Mar 18 00:00:00 CET 2011
+Berï¿½hrung bei 239
+Datum: Wed Feb 01 00:00:00 CET 2012, Open: 136.7, High: 137.3, Low: 130.6, Close: 134.1, Relevant: 134.1
+-----------TREND--------------
+von: Fri Mar 18 00:00:00 CET 2011 114.0
+bis: Wed Feb 01 00:00:00 CET 2012 134.1
+-----------TREND--------------
+X: 14, Y: 114.0, Steigung: 0.08983682008368192, Berührung: 239
+
+
+
+Anzahl Werte: 258
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 5,54
+Trying: AMD.SG
+aktueller Preis: 5.54
+Kleinster Wert Datum: Thu Oct 20 00:00:00 CEST 2011 Wert:3.31
+Maximum: 5.74
+inc=0.008100000000000001
+Trying to find line, start 166 = Thu Oct 20 00:00:00 CEST 2011
+Berï¿½hrung bei 210
+Datum: Wed Dec 21 00:00:00 CET 2011, Open: 3.92, High: 3.92, Low: 3.84, Close: 3.84, Relevant: 3.84
+Trying to find line, start 210 = Wed Dec 21 00:00:00 CET 2011
+Berï¿½hrung bei 228
+Datum: Wed Jan 18 00:00:00 CET 2012, Open: 4.47, High: 4.47, Low: 4.46, Close: 4.46, Relevant: 4.46
+Trying to find line, start 228 = Wed Jan 18 00:00:00 CET 2012
+Berï¿½hrung bei 252
+Datum: Tue Feb 21 00:00:00 CET 2012, Open: 5.59, High: 5.63, Low: 5.59, Close: 5.63, Relevant: 5.63
+Trying to find line, start 252 = Tue Feb 21 00:00:00 CET 2012
+COULD NOT FIND LONG TREND, TAKING LAST TREND
+-----------TREND--------------
+von: Wed Jan 18 00:00:00 CET 2012 4.46
+bis: Tue Feb 21 00:00:00 CET 2012 5.63
+-----------TREND--------------
+X: 228, Y: 4.46, Steigung: 0.04893749999999999, Berührung: 252
+
+
+
+Anzahl Werte: 258
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 401,00
+Trying: APC.DE
+aktueller Preis: 401.0
+Kleinster Wert Datum: Mon Jun 20 00:00:00 CEST 2011 Wert:217.95
+Maximum: 400.7
+inc=0.6091666666666666
+Trying to find line, start 78 = Mon Jun 20 00:00:00 CEST 2011
+Berï¿½hrung bei 188
+Datum: Mon Nov 21 00:00:00 CET 2011, Open: 276.2, High: 276.2, Low: 271.55, Close: 271.75, Relevant: 271.75
+-----------TREND--------------
+von: Mon Jun 20 00:00:00 CEST 2011 217.95
+bis: Mon Nov 21 00:00:00 CET 2011 271.75
+-----------TREND--------------
+X: 78, Y: 217.95, Steigung: 0.49013409961685833, Berührung: 188
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 30,35
+Trying: BC8.DE
+aktueller Preis: 30.35
+Kleinster Wert Datum: Thu Sep 22 00:00:00 CEST 2011 Wert:23.48
+Maximum: 30.64
+inc=0.023866666666666668
+Trying to find line, start 146 = Thu Sep 22 00:00:00 CEST 2011
+Berï¿½hrung bei 210
+Datum: Wed Dec 21 00:00:00 CET 2011, Open: 25.8, High: 25.8, Low: 24.61, Close: 24.71, Relevant: 24.71
+-----------TREND--------------
+von: Thu Sep 22 00:00:00 CEST 2011 23.48
+bis: Wed Dec 21 00:00:00 CET 2011 24.71
+-----------TREND--------------
+X: 146, Y: 23.48, Steigung: 0.019405607476635535, Berührung: 210
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 17,45
+Trying: AFX.DE
+aktueller Preis: 17.45
+Kleinster Wert Datum: Fri Sep 23 00:00:00 CEST 2011 Wert:12.97
+Maximum: 17.58
+inc=0.015366666666666659
+Trying to find line, start 147 = Fri Sep 23 00:00:00 CEST 2011
+Berï¿½hrung bei 166
+Datum: Thu Oct 20 00:00:00 CEST 2011, Open: 13.14, High: 13.15, Low: 12.92, Close: 13.0, Relevant: 13.0
+Trying to find line, start 166 = Thu Oct 20 00:00:00 CEST 2011
+Berï¿½hrung bei 202
+Datum: Fri Dec 09 00:00:00 CET 2011, Open: 13.98, High: 14.05, Low: 13.78, Close: 13.82, Relevant: 13.82
+Trying to find line, start 202 = Fri Dec 09 00:00:00 CET 2011
+Berï¿½hrung bei 245
+Datum: Thu Feb 09 00:00:00 CET 2012, Open: 16.3, High: 16.31, Low: 15.94, Close: 16.03, Relevant: 16.03
+Trying to find line, start 245 = Thu Feb 09 00:00:00 CET 2012
+COULD NOT FIND LONG TREND, TAKING LAST TREND
+-----------TREND--------------
+von: Fri Dec 09 00:00:00 CET 2011 13.82
+bis: Thu Feb 09 00:00:00 CET 2012 16.03
+-----------TREND--------------
+X: 202, Y: 13.82, Steigung: 0.051523529411764676, Berührung: 245
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 33,20
+Trying: CWC.DE
+aktueller Preis: 33.2
+Kleinster Wert Datum: Wed Aug 10 00:00:00 CEST 2011 Wert:25.78
+Maximum: 34.17
+inc=0.027966666666666667
+Trying to find line, start 115 = Wed Aug 10 00:00:00 CEST 2011
+Berï¿½hrung bei 190
+Datum: Wed Nov 23 00:00:00 CET 2011, Open: 26.96, High: 27.1, Low: 26.46, Close: 26.46, Relevant: 26.46
+-----------TREND--------------
+von: Wed Aug 10 00:00:00 CEST 2011 25.78
+bis: Wed Nov 23 00:00:00 CET 2011 26.46
+-----------TREND--------------
+X: 115, Y: 25.78, Steigung: 0.009119565217391313, Berührung: 190
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 8,66
+Trying: COM.DE
+aktueller Preis: 8.66
+Kleinster Wert Datum: Fri Aug 19 00:00:00 CEST 2011 Wert:6.38
+Maximum: 8.64
+inc=0.0075333333333333355
+Trying to find line, start 122 = Fri Aug 19 00:00:00 CEST 2011
+Berï¿½hrung bei 215
+Datum: Thu Dec 29 00:00:00 CET 2011, Open: 7.43, High: 7.46, Low: 7.4, Close: 7.4, Relevant: 7.4
+-----------TREND--------------
+von: Fri Aug 19 00:00:00 CEST 2011 6.38
+bis: Thu Dec 29 00:00:00 CET 2011 7.4
+-----------TREND--------------
+X: 122, Y: 6.38, Steigung: 0.010983715012722647, Berührung: 215
+
+
+
+Anzahl Werte: 258
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 51,38
+Trying: DB1.DE
+aktueller Preis: 51.38
+Kleinster Wert Datum: Tue Oct 04 00:00:00 CEST 2011 Wert:36.12
+Maximum: 52.02
+inc=0.05300000000000002
+Trying to find line, start 154 = Tue Oct 04 00:00:00 CEST 2011
+Berï¿½hrung bei 221
+Datum: Fri Jan 06 00:00:00 CET 2012, Open: 41.7, High: 41.88, Low: 39.65, Close: 39.92, Relevant: 39.92
+-----------TREND--------------
+von: Tue Oct 04 00:00:00 CEST 2011 36.12
+bis: Fri Jan 06 00:00:00 CET 2012 39.92
+-----------TREND--------------
+X: 154, Y: 36.12, Steigung: 0.056785714285714245, Berührung: 221
+
+
+
+Anzahl Werte: 258
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 13,32
+Trying: DPW.DE
+aktueller Preis: 13.32
+Kleinster Wert Datum: Fri Sep 23 00:00:00 CEST 2011 Wert:9.13
+Maximum: 13.72
+inc=0.0153
+Trying to find line, start 147 = Fri Sep 23 00:00:00 CEST 2011
+Berï¿½hrung bei 191
+Datum: Thu Nov 24 00:00:00 CET 2011, Open: 10.48, High: 10.64, Low: 10.25, Close: 10.25, Relevant: 10.25
+Trying to find line, start 191 = Thu Nov 24 00:00:00 CET 2011
+Berï¿½hrung bei 250
+Datum: Thu Feb 16 00:00:00 CET 2012, Open: 13.03, High: 13.09, Low: 12.98, Close: 13.06, Relevant: 13.06
+Trying to find line, start 250 = Thu Feb 16 00:00:00 CET 2012
+COULD NOT FIND LONG TREND, TAKING LAST TREND
+-----------TREND--------------
+von: Thu Nov 24 00:00:00 CET 2011 10.25
+bis: Thu Feb 16 00:00:00 CET 2012 13.06
+-----------TREND--------------
+X: 191, Y: 10.25, Steigung: 0.04765573770491799, Berührung: 250
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 8,85
+Trying: DTE.DE
+aktueller Preis: 8.85
+Kleinster Wert Datum: Mon Sep 12 00:00:00 CEST 2011 Wert:7.95
+Maximum: 9.64
+inc=0.005633333333333335
+Trying to find line, start 138 = Mon Sep 12 00:00:00 CEST 2011
+Berï¿½hrung bei 238
+Datum: Tue Jan 31 00:00:00 CET 2012, Open: 8.77, High: 8.8, Low: 8.57, Close: 8.6, Relevant: 8.6
+-----------TREND--------------
+von: Mon Sep 12 00:00:00 CEST 2011 7.95
+bis: Tue Jan 31 00:00:00 CET 2012 8.6
+-----------TREND--------------
+X: 138, Y: 7.95, Steigung: 0.006515072463768129, Berührung: 238
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 16,34
+Trying: DLG.DE
+aktueller Preis: 16.34
+Kleinster Wert Datum: Thu Jun 23 00:00:00 CEST 2011 Wert:10.69
+Maximum: 17.0
+inc=0.021033333333333334
+Trying to find line, start 81 = Thu Jun 23 00:00:00 CEST 2011
+Berï¿½hrung bei 190
+Datum: Wed Nov 23 00:00:00 CET 2011, Open: 11.52, High: 11.9, Low: 11.23, Close: 11.31, Relevant: 11.31
+-----------TREND--------------
+von: Thu Jun 23 00:00:00 CEST 2011 10.69
+bis: Wed Nov 23 00:00:00 CET 2011 11.31
+-----------TREND--------------
+X: 81, Y: 10.69, Steigung: 0.005747480620155042, Berührung: 190
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 7,47
+Trying: DRI.DE
+aktueller Preis: 7.47
+Kleinster Wert Datum: Mon Nov 07 00:00:00 CET 2011 Wert:5.0
+Maximum: 8.39
+inc=0.011300000000000003
+Trying to find line, start 178 = Mon Nov 07 00:00:00 CET 2011
+Berï¿½hrung bei 251
+Datum: Fri Feb 17 00:00:00 CET 2012, Open: 7.63, High: 7.64, Low: 7.4, Close: 7.41, Relevant: 7.41
+-----------TREND--------------
+von: Mon Nov 07 00:00:00 CET 2011 5.0
+bis: Fri Feb 17 00:00:00 CET 2012 7.41
+-----------TREND--------------
+X: 178, Y: 5.0, Steigung: 0.03314666666666668, Berührung: 251
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 72,99
+Trying: FIE.DE
+aktueller Preis: 72.99
+Kleinster Wert Datum: Tue Mar 15 00:00:00 CET 2011 Wert:61.72
+Maximum: 80.07
+inc=0.06116666666666665
+Trying to find line, start 11 = Tue Mar 15 00:00:00 CET 2011
+Berï¿½hrung bei 113
+Datum: Mon Aug 08 00:00:00 CEST 2011, Open: 66.25, High: 67.4, Low: 65.0, Close: 65.07, Relevant: 65.07
+-----------TREND--------------
+von: Tue Mar 15 00:00:00 CET 2011 61.72
+bis: Mon Aug 08 00:00:00 CEST 2011 65.07
+-----------TREND--------------
+X: 11, Y: 61.72, Steigung: 0.03285812672176314, Berührung: 113
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 33,20
+Trying: GXI.DE
+aktueller Preis: 33.2
+Kleinster Wert Datum: Tue Nov 22 00:00:00 CET 2011 Wert:29.14
+Maximum: 37.21
+inc=0.0269
+Trying to find line, start 189 = Tue Nov 22 00:00:00 CET 2011
+Berï¿½hrung bei 253
+Datum: Tue Feb 21 00:00:00 CET 2012, Open: 32.85, High: 33.3, Low: 32.8, Close: 33.0, Relevant: 33.0
+-----------TREND--------------
+von: Tue Nov 22 00:00:00 CET 2011 29.14
+bis: Tue Feb 21 00:00:00 CET 2012 33.0
+-----------TREND--------------
+X: 189, Y: 29.14, Steigung: 0.060524999999999884, Berührung: 253
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Current value from yfs_110
+Price: null
+Trying: AQU.DE
+aktueller Preis: 0.0
+Kleinster Wert Datum: Tue Jan 24 00:00:00 CET 2012 Wert:2.23
+Maximum: 3.21
+inc=0.0032666666666666664
+Trying to find line, start 233 = Tue Jan 24 00:00:00 CET 2012
+Berï¿½hrung bei 253
+Datum: Tue Feb 21 00:00:00 CET 2012, Open: 3.21, High: 3.21, Low: 3.1, Close: 3.14, Relevant: 3.14
+Trying to find line, start 253 = Tue Feb 21 00:00:00 CET 2012
+COULD NOT FIND LONG TREND, TAKING LAST TREND
+-----------TREND--------------
+von: Tue Jan 24 00:00:00 CET 2012 2.23
+bis: Tue Feb 21 00:00:00 CET 2012 3.14
+-----------TREND--------------
+X: 233, Y: 2.23, Steigung: 0.045569999999999736, Berührung: 253
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 12,29
+Trying: GIL.DE
+aktueller Preis: 12.29
+Kleinster Wert Datum: Tue Oct 04 00:00:00 CEST 2011 Wert:8.69
+Maximum: 12.74
+inc=0.013500000000000002
+Trying to find line, start 154 = Tue Oct 04 00:00:00 CEST 2011
+Berï¿½hrung bei 190
+Datum: Wed Nov 23 00:00:00 CET 2011, Open: 8.9, High: 9.04, Low: 8.7, Close: 8.75, Relevant: 8.75
+Trying to find line, start 190 = Wed Nov 23 00:00:00 CET 2011
+Berï¿½hrung bei 208
+Datum: Mon Dec 19 00:00:00 CET 2011, Open: 9.15, High: 9.44, Low: 9.15, Close: 9.19, Relevant: 9.19
+Trying to find line, start 208 = Mon Dec 19 00:00:00 CET 2011
+Berï¿½hrung bei 226
+Datum: Fri Jan 13 00:00:00 CET 2012, Open: 10.38, High: 10.52, Low: 10.05, Close: 10.25, Relevant: 10.25
+Trying to find line, start 226 = Fri Jan 13 00:00:00 CET 2012
+Berï¿½hrung bei 248
+Datum: Tue Feb 14 00:00:00 CET 2012, Open: 11.91, High: 12.11, Low: 11.7, Close: 11.8, Relevant: 11.8
+Trying to find line, start 248 = Tue Feb 14 00:00:00 CET 2012
+COULD NOT FIND LONG TREND, TAKING LAST TREND
+-----------TREND--------------
+von: Fri Jan 13 00:00:00 CET 2012 10.25
+bis: Tue Feb 14 00:00:00 CET 2012 11.8
+-----------TREND--------------
+X: 226, Y: 10.25, Steigung: 0.07050000000000012, Berührung: 248
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 460,95
+Trying: GGQ1.DE
+aktueller Preis: 460.95
+Kleinster Wert Datum: Fri Jun 24 00:00:00 CEST 2011 Wert:335.95
+Maximum: 516.05
+inc=0.6003333333333333
+Trying to find line, start 82 = Fri Jun 24 00:00:00 CEST 2011
+Berï¿½hrung bei 123
+Datum: Mon Aug 22 00:00:00 CEST 2011, Open: 342.8, High: 351.0, Low: 341.0, Close: 347.6, Relevant: 347.6
+Trying to find line, start 123 = Mon Aug 22 00:00:00 CEST 2011
+Berï¿½hrung bei 154
+Datum: Tue Oct 04 00:00:00 CEST 2011, Open: 375.0, High: 375.0, Low: 366.7, Close: 367.7, Relevant: 367.7
+Trying to find line, start 154 = Tue Oct 04 00:00:00 CEST 2011
+Berï¿½hrung bei 235
+Datum: Thu Jan 26 00:00:00 CET 2012, Open: 435.9, High: 436.6, Low: 430.0, Close: 435.35, Relevant: 435.35
+-----------TREND--------------
+von: Tue Oct 04 00:00:00 CEST 2011 367.7
+bis: Thu Jan 26 00:00:00 CET 2012 435.35
+-----------TREND--------------
+X: 154, Y: 367.7, Steigung: 0.8368282828282831, Berührung: 235
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 42,05
+Trying: HNR1.DE
+aktueller Preis: 42.05
+Kleinster Wert Datum: Mon Sep 12 00:00:00 CEST 2011 Wert:29.31
+Maximum: 42.76
+inc=0.04483333333333333
+Trying to find line, start 138 = Mon Sep 12 00:00:00 CEST 2011
+Berï¿½hrung bei 191
+Datum: Thu Nov 24 00:00:00 CET 2011, Open: 34.96, High: 35.03, Low: 34.05, Close: 34.35, Relevant: 34.35
+Trying to find line, start 191 = Thu Nov 24 00:00:00 CET 2011
+Berï¿½hrung bei 222
+Datum: Mon Jan 09 00:00:00 CET 2012, Open: 38.16, High: 38.16, Low: 37.1, Close: 37.35, Relevant: 37.35
+Trying to find line, start 222 = Mon Jan 09 00:00:00 CET 2012
+Berï¿½hrung bei 250
+Datum: Thu Feb 16 00:00:00 CET 2012, Open: 41.72, High: 42.0, Low: 41.28, Close: 41.98, Relevant: 41.98
+Trying to find line, start 250 = Thu Feb 16 00:00:00 CET 2012
+COULD NOT FIND LONG TREND, TAKING LAST TREND
+-----------TREND--------------
+von: Mon Jan 09 00:00:00 CET 2012 37.35
+bis: Thu Feb 16 00:00:00 CET 2012 41.98
+-----------TREND--------------
+X: 222, Y: 37.35, Steigung: 0.16631720430107522, Berührung: 250
+
+
+
+Anzahl Werte: 258
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 25,96
+Trying: HHFA.DE
+aktueller Preis: 25.96
+Kleinster Wert Datum: Tue Nov 22 00:00:00 CET 2011 Wert:19.65
+Maximum: 26.22
+inc=0.0219
+Trying to find line, start 189 = Tue Nov 22 00:00:00 CET 2011
+Berï¿½hrung bei 208
+Datum: Mon Dec 19 00:00:00 CET 2011, Open: 21.19, High: 21.46, Low: 20.76, Close: 21.04, Relevant: 21.04
+Trying to find line, start 208 = Mon Dec 19 00:00:00 CET 2011
+Berï¿½hrung bei 250
+Datum: Thu Feb 16 00:00:00 CET 2012, Open: 25.0, High: 25.01, Low: 24.58, Close: 24.99, Relevant: 24.99
+Trying to find line, start 250 = Thu Feb 16 00:00:00 CET 2012
+COULD NOT FIND LONG TREND, TAKING LAST TREND
+-----------TREND--------------
+von: Mon Dec 19 00:00:00 CET 2011 21.04
+bis: Thu Feb 16 00:00:00 CET 2012 24.99
+-----------TREND--------------
+X: 208, Y: 21.04, Steigung: 0.09407045454545458, Berührung: 250
+
+
+
+Anzahl Werte: 258
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 147,00
+Trying: IBM.DE
+aktueller Preis: 147.0
+Kleinster Wert Datum: Thu Mar 17 00:00:00 CET 2011 Wert:109.45
+Maximum: 149.15
+inc=0.13233333333333333
+Trying to find line, start 13 = Thu Mar 17 00:00:00 CET 2011
+Berï¿½hrung bei 123
+Datum: Mon Aug 22 00:00:00 CEST 2011, Open: 109.8, High: 111.75, Low: 107.65, Close: 110.6, Relevant: 110.6
+-----------TREND--------------
+von: Thu Mar 17 00:00:00 CET 2011 109.45
+bis: Mon Aug 22 00:00:00 CEST 2011 110.6
+-----------TREND--------------
+X: 13, Y: 109.45, Steigung: 0.010520223152022317, Berührung: 123
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 7,77
+Trying: IFX.DE
+aktueller Preis: 7.77
+Kleinster Wert Datum: Tue Sep 06 00:00:00 CEST 2011 Wert:5.15
+Maximum: 7.81
+inc=0.008866666666666663
+Trying to find line, start 134 = Tue Sep 06 00:00:00 CEST 2011
+Berï¿½hrung bei 154
+Datum: Tue Oct 04 00:00:00 CEST 2011, Open: 5.29, High: 5.3, Low: 5.0, Close: 5.22, Relevant: 5.22
+Trying to find line, start 154 = Tue Oct 04 00:00:00 CEST 2011
+Berï¿½hrung bei 208
+Datum: Mon Dec 19 00:00:00 CET 2011, Open: 5.7, High: 5.78, Low: 5.59, Close: 5.61, Relevant: 5.61
+Trying to find line, start 208 = Mon Dec 19 00:00:00 CET 2011
+Berï¿½hrung bei 248
+Datum: Tue Feb 14 00:00:00 CET 2012, Open: 7.39, High: 7.53, Low: 7.04, Close: 7.1, Relevant: 7.1
+Trying to find line, start 248 = Tue Feb 14 00:00:00 CET 2012
+COULD NOT FIND LONG TREND, TAKING LAST TREND
+-----------TREND--------------
+von: Mon Dec 19 00:00:00 CET 2011 5.61
+bis: Tue Feb 14 00:00:00 CET 2012 7.1
+-----------TREND--------------
+X: 208, Y: 5.61, Steigung: 0.03743703703703693, Berührung: 248
+FILENOTFOUND: java.io.FileNotFoundException: http://ichart.finance.yahoo.com/table.csv?s=INL.SG&a=1&b=28&c=2011&d=1&e=29&f=2012&g=d&ignore=.csv
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 5,75
+Trying: JEN.DE
+aktueller Preis: 5.75
+Kleinster Wert Datum: Mon Sep 12 00:00:00 CEST 2011 Wert:4.3
+Maximum: 5.83
+inc=0.005100000000000001
+Trying to find line, start 138 = Mon Sep 12 00:00:00 CEST 2011
+Berï¿½hrung bei 208
+Datum: Mon Dec 19 00:00:00 CET 2011, Open: 4.45, High: 4.51, Low: 4.43, Close: 4.44, Relevant: 4.44
+-----------TREND--------------
+von: Mon Sep 12 00:00:00 CEST 2011 4.3
+bis: Mon Dec 19 00:00:00 CET 2011 4.44
+-----------TREND--------------
+X: 138, Y: 4.3, Steigung: 0.0020399999999999997, Berührung: 208
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 43,38
+Trying: KD8.DE
+aktueller Preis: 43.38
+Kleinster Wert Datum: Mon Aug 08 00:00:00 CEST 2011 Wert:33.16
+Maximum: 43.82
+inc=0.03553333333333335
+Trying to find line, start 113 = Mon Aug 08 00:00:00 CEST 2011
+Berï¿½hrung bei 242
+Datum: Mon Feb 06 00:00:00 CET 2012, Open: 38.6, High: 39.22, Low: 37.94, Close: 38.0, Relevant: 38.0
+-----------TREND--------------
+von: Mon Aug 08 00:00:00 CEST 2011 33.16
+bis: Mon Feb 06 00:00:00 CET 2012 38.0
+-----------TREND--------------
+X: 113, Y: 33.16, Steigung: 0.03756380952380959, Berührung: 242
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 15,40
+Trying: MDN.DE
+aktueller Preis: 15.4
+Kleinster Wert Datum: Mon Apr 18 00:00:00 CEST 2011 Wert:9.19
+Maximum: 15.99
+inc=0.02266666666666667
+Trying to find line, start 35 = Mon Apr 18 00:00:00 CEST 2011
+Berï¿½hrung bei 252
+Datum: Mon Feb 20 00:00:00 CET 2012, Open: 15.4, High: 15.45, Low: 15.4, Close: 15.4, Relevant: 15.4
+-----------TREND--------------
+von: Mon Apr 18 00:00:00 CEST 2011 9.19
+bis: Mon Feb 20 00:00:00 CET 2012 15.4
+-----------TREND--------------
+X: 35, Y: 9.19, Steigung: 0.028697247706422145, Berührung: 252
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 29,54
+Trying: MEO.DE
+aktueller Preis: 29.54
+Kleinster Wert Datum: Mon Jan 16 00:00:00 CET 2012 Wert:27.26
+Maximum: 36.99
+inc=0.032433333333333335
+Trying to find line, start 227 = Mon Jan 16 00:00:00 CET 2012
+Berï¿½hrung bei 250
+Datum: Thu Feb 16 00:00:00 CET 2012, Open: 28.43, High: 28.53, Low: 28.11, Close: 28.31, Relevant: 28.31
+Trying to find line, start 250 = Thu Feb 16 00:00:00 CET 2012
+COULD NOT FIND LONG TREND, TAKING LAST TREND
+-----------TREND--------------
+von: Mon Jan 16 00:00:00 CET 2012 27.26
+bis: Thu Feb 16 00:00:00 CET 2012 28.31
+-----------TREND--------------
+X: 227, Y: 27.26, Steigung: 0.04615512820512819, Berührung: 250
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 23,46
+Trying: MSF.DE
+aktueller Preis: 23.46
+Kleinster Wert Datum: Tue Jun 07 00:00:00 CEST 2011 Wert:16.31
+Maximum: 23.75
+inc=0.024800000000000003
+Trying to find line, start 69 = Tue Jun 07 00:00:00 CEST 2011
+Berï¿½hrung bei 123
+Datum: Mon Aug 22 00:00:00 CEST 2011, Open: 16.88, High: 16.94, Low: 16.7, Close: 16.7, Relevant: 16.7
+Trying to find line, start 123 = Mon Aug 22 00:00:00 CEST 2011
+Berï¿½hrung bei 191
+Datum: Thu Nov 24 00:00:00 CET 2011, Open: 18.48, High: 18.5, Low: 18.31, Close: 18.36, Relevant: 18.36
+-----------TREND--------------
+von: Mon Aug 22 00:00:00 CEST 2011 16.7
+bis: Thu Nov 24 00:00:00 CET 2011 18.36
+-----------TREND--------------
+X: 123, Y: 16.7, Steigung: 0.0244184615384615, Berührung: 191
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 111,30
+Trying: MUV2.DE
+aktueller Preis: 111.3
+Kleinster Wert Datum: Mon Sep 12 00:00:00 CEST 2011 Wert:79.55
+Maximum: 111.3
+inc=0.10583333333333333
+Trying to find line, start 138 = Mon Sep 12 00:00:00 CEST 2011
+Berï¿½hrung bei 191
+Datum: Thu Nov 24 00:00:00 CET 2011, Open: 85.2, High: 85.49, Low: 82.93, Close: 83.66, Relevant: 83.66
+Trying to find line, start 191 = Thu Nov 24 00:00:00 CET 2011
+Berï¿½hrung bei 222
+Datum: Mon Jan 09 00:00:00 CET 2012, Open: 93.44, High: 93.44, Low: 91.39, Close: 91.9, Relevant: 91.9
+Trying to find line, start 222 = Mon Jan 09 00:00:00 CET 2012
+Berï¿½hrung bei 250
+Datum: Thu Feb 16 00:00:00 CET 2012, Open: 107.2, High: 107.55, Low: 106.5, Close: 107.55, Relevant: 107.55
+Trying to find line, start 250 = Thu Feb 16 00:00:00 CET 2012
+COULD NOT FIND LONG TREND, TAKING LAST TREND
+-----------TREND--------------
+von: Mon Jan 09 00:00:00 CET 2012 91.9
+bis: Thu Feb 16 00:00:00 CET 2012 107.55
+-----------TREND--------------
+X: 222, Y: 91.9, Steigung: 0.5598924731182784, Berührung: 250
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 3,98
+Trying: NOA3.DE
+aktueller Preis: 3.98
+Kleinster Wert Datum: Wed Aug 10 00:00:00 CEST 2011 Wert:3.46
+Maximum: 5.11
+inc=0.005500000000000001
+Trying to find line, start 115 = Wed Aug 10 00:00:00 CEST 2011
+Berï¿½hrung bei 208
+Datum: Mon Dec 19 00:00:00 CET 2011, Open: 3.6, High: 3.65, Low: 3.54, Close: 3.54, Relevant: 3.54
+-----------TREND--------------
+von: Wed Aug 10 00:00:00 CEST 2011 3.46
+bis: Mon Dec 19 00:00:00 CET 2011 3.54
+-----------TREND--------------
+X: 115, Y: 3.46, Steigung: 8.768115942028991E-4, Berührung: 208
+
+
+
+Anzahl Werte: 258
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 4,74
+Trying: NDX1.DE
+aktueller Preis: 4.74
+Kleinster Wert Datum: Tue Nov 22 00:00:00 CET 2011 Wert:3.47
+Maximum: 5.32
+inc=0.006166666666666667
+Trying to find line, start 189 = Tue Nov 22 00:00:00 CET 2011
+Berï¿½hrung bei 220
+Datum: Thu Jan 05 00:00:00 CET 2012, Open: 4.08, High: 4.08, Low: 3.8, Close: 3.82, Relevant: 3.82
+Trying to find line, start 220 = Thu Jan 05 00:00:00 CET 2012
+Berï¿½hrung bei 251
+Datum: Fri Feb 17 00:00:00 CET 2012, Open: 4.87, High: 4.94, Low: 4.76, Close: 4.84, Relevant: 4.84
+Trying to find line, start 251 = Fri Feb 17 00:00:00 CET 2012
+COULD NOT FIND LONG TREND, TAKING LAST TREND
+-----------TREND--------------
+von: Thu Jan 05 00:00:00 CET 2012 3.82
+bis: Fri Feb 17 00:00:00 CET 2012 4.84
+-----------TREND--------------
+X: 220, Y: 3.82, Steigung: 0.032953124999999944, Berührung: 251
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 21,58
+Trying: ORC.DE
+aktueller Preis: 21.58
+Kleinster Wert Datum: Mon Aug 22 00:00:00 CEST 2011 Wert:17.4
+Maximum: 24.16
+inc=0.02253333333333334
+Trying to find line, start 123 = Mon Aug 22 00:00:00 CEST 2011
+Berï¿½hrung bei 211
+Datum: Thu Dec 22 00:00:00 CET 2011, Open: 19.77, High: 19.9, Low: 19.5, Close: 19.5, Relevant: 19.5
+-----------TREND--------------
+von: Mon Aug 22 00:00:00 CEST 2011 17.4
+bis: Thu Dec 22 00:00:00 CET 2011 19.5
+-----------TREND--------------
+X: 123, Y: 17.4, Steigung: 0.023920000000000052, Berührung: 211
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 19,33
+Trying: PSM.DE
+aktueller Preis: 19.33
+Kleinster Wert Datum: Tue Aug 23 00:00:00 CEST 2011 Wert:11.49
+Maximum: 19.1
+inc=0.02536666666666667
+Trying to find line, start 124 = Tue Aug 23 00:00:00 CEST 2011
+Berï¿½hrung bei 190
+Datum: Wed Nov 23 00:00:00 CET 2011, Open: 12.14, High: 12.68, Low: 12.05, Close: 12.11, Relevant: 12.11
+-----------TREND--------------
+von: Tue Aug 23 00:00:00 CEST 2011 11.49
+bis: Wed Nov 23 00:00:00 CET 2011 12.11
+-----------TREND--------------
+X: 124, Y: 11.49, Steigung: 0.009438759689922482, Berührung: 190
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 260,30
+Trying: PUM.DE
+aktueller Preis: 260.3
+Kleinster Wert Datum: Mon Apr 18 00:00:00 CEST 2011 Wert:197.3
+Maximum: 266.8
+inc=0.23166666666666666
+Trying to find line, start 35 = Mon Apr 18 00:00:00 CEST 2011
+Berï¿½hrung bei 113
+Datum: Mon Aug 08 00:00:00 CEST 2011, Open: 205.0, High: 210.35, Low: 198.7, Close: 198.75, Relevant: 198.75
+-----------TREND--------------
+von: Mon Apr 18 00:00:00 CEST 2011 197.3
+bis: Mon Aug 08 00:00:00 CEST 2011 198.75
+-----------TREND--------------
+X: 35, Y: 197.3, Steigung: 0.01912844036697247, Berührung: 113
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 50,53
+Trying: SAP.DE
+aktueller Preis: 50.53
+Kleinster Wert Datum: Fri Aug 19 00:00:00 CEST 2011 Wert:34.26
+Maximum: 50.6
+inc=0.05446666666666668
+Trying to find line, start 122 = Fri Aug 19 00:00:00 CEST 2011
+Berï¿½hrung bei 147
+Datum: Fri Sep 23 00:00:00 CEST 2011, Open: 36.42, High: 36.67, Low: 34.62, Close: 35.83, Relevant: 35.83
+Trying to find line, start 147 = Fri Sep 23 00:00:00 CEST 2011
+Berï¿½hrung bei 210
+Datum: Wed Dec 21 00:00:00 CET 2011, Open: 41.1, High: 41.31, Low: 39.76, Close: 39.92, Relevant: 39.92
+-----------TREND--------------
+von: Fri Sep 23 00:00:00 CEST 2011 35.83
+bis: Wed Dec 21 00:00:00 CET 2011 39.92
+-----------TREND--------------
+X: 147, Y: 35.83, Steigung: 0.06525723270440248, Berührung: 210
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 2,71
+Trying: SNG.DE
+aktueller Preis: 2.71
+Kleinster Wert Datum: Wed Dec 14 00:00:00 CET 2011 Wert:1.95
+Maximum: 3.12
+inc=0.0039000000000000007
+Trying to find line, start 205 = Wed Dec 14 00:00:00 CET 2011
+Berï¿½hrung bei 223
+Datum: Tue Jan 10 00:00:00 CET 2012, Open: 2.21, High: 2.22, Low: 2.16, Close: 2.19, Relevant: 2.19
+Trying to find line, start 223 = Tue Jan 10 00:00:00 CET 2012
+Berï¿½hrung bei 250
+Datum: Thu Feb 16 00:00:00 CET 2012, Open: 2.87, High: 2.87, Low: 2.8, Close: 2.86, Relevant: 2.86
+Trying to find line, start 250 = Thu Feb 16 00:00:00 CET 2012
+COULD NOT FIND LONG TREND, TAKING LAST TREND
+-----------TREND--------------
+von: Tue Jan 10 00:00:00 CET 2012 2.19
+bis: Thu Feb 16 00:00:00 CET 2012 2.86
+-----------TREND--------------
+X: 223, Y: 2.19, Steigung: 0.024830000000000078, Berührung: 250
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 2,32
+Trying: SZZ.DE
+aktueller Preis: 2.32
+Kleinster Wert Datum: Mon Sep 12 00:00:00 CEST 2011 Wert:1.83
+Maximum: 2.42
+inc=0.001966666666666666
+Trying to find line, start 138 = Mon Sep 12 00:00:00 CEST 2011
+Berï¿½hrung bei 251
+Datum: Fri Feb 17 00:00:00 CET 2012, Open: 2.3, High: 2.3, Low: 2.27, Close: 2.27, Relevant: 2.27
+-----------TREND--------------
+von: Mon Sep 12 00:00:00 CEST 2011 1.83
+bis: Fri Feb 17 00:00:00 CET 2012 2.27
+-----------TREND--------------
+X: 138, Y: 1.83, Steigung: 0.0038991304347826177, Berührung: 251
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 28,30
+Trying: SOW.DE
+aktueller Preis: 28.3
+Kleinster Wert Datum: Tue Oct 04 00:00:00 CEST 2011 Wert:22.25
+Maximum: 32.09
+inc=0.03280000000000001
+Trying to find line, start 154 = Tue Oct 04 00:00:00 CEST 2011
+Berï¿½hrung bei 224
+Datum: Wed Jan 11 00:00:00 CET 2012, Open: 23.95, High: 24.49, Low: 23.5, Close: 23.61, Relevant: 23.61
+-----------TREND--------------
+von: Tue Oct 04 00:00:00 CEST 2011 22.25
+bis: Wed Jan 11 00:00:00 CET 2012 23.61
+-----------TREND--------------
+X: 154, Y: 22.25, Steigung: 0.01954747474747474, Berührung: 224
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 3,49
+Trying: SWV.DE
+aktueller Preis: 3.49
+Kleinster Wert Datum: Thu Dec 08 00:00:00 CET 2011 Wert:2.61
+Maximum: 5.87
+inc=0.010866666666666667
+Trying to find line, start 201 = Thu Dec 08 00:00:00 CET 2011
+Berï¿½hrung bei 250
+Datum: Thu Feb 16 00:00:00 CET 2012, Open: 4.0, High: 4.02, Low: 3.85, Close: 3.93, Relevant: 3.93
+Trying to find line, start 250 = Thu Feb 16 00:00:00 CET 2012
+COULD NOT FIND LONG TREND, TAKING LAST TREND
+-----------TREND--------------
+von: Thu Dec 08 00:00:00 CET 2011 2.61
+bis: Thu Feb 16 00:00:00 CET 2012 3.93
+-----------TREND--------------
+X: 201, Y: 2.61, Steigung: 0.026957692307692276, Berührung: 250
+
+
+
+Anzahl Werte: 257
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 10,10
+Trying: SMHN.SG
+aktueller Preis: 10.1
+Kleinster Wert Datum: Wed Dec 28 00:00:00 CET 2011 Wert:5.47
+Maximum: 10.01
+inc=0.015133333333333334
+Trying to find line, start 213 = Wed Dec 28 00:00:00 CET 2011
+Berï¿½hrung bei 236
+Datum: Tue Jan 31 00:00:00 CET 2012, Open: 7.21, High: 7.28, Low: 7.05, Close: 7.05, Relevant: 7.05
+Trying to find line, start 236 = Tue Jan 31 00:00:00 CET 2012
+COULD NOT FIND LONG TREND, TAKING LAST TREND
+-----------TREND--------------
+von: Wed Dec 28 00:00:00 CET 2011 5.47
+bis: Tue Jan 31 00:00:00 CET 2012 7.05
+-----------TREND--------------
+X: 213, Y: 5.47, Steigung: 0.06889649122807047, Berührung: 236
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 7,75
+Trying: VWS.DE
+aktueller Preis: 7.75
+Kleinster Wert Datum: Tue Feb 14 00:00:00 CET 2012 Wert:7.0
+Maximum: 15.2
+inc=0.02733333333333333
+Trying to find line, start 248 = Tue Feb 14 00:00:00 CET 2012
+COULD NOT FIND ANY TREND
+
+
+
+Anzahl Werte: 258
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 40,95
+Trying: WIN.DE
+aktueller Preis: 40.95
+Kleinster Wert Datum: Wed Nov 23 00:00:00 CET 2011 Wert:30.84
+Maximum: 41.5
+inc=0.03553333333333333
+Trying to find line, start 190 = Wed Nov 23 00:00:00 CET 2011
+Berï¿½hrung bei 233
+Datum: Tue Jan 24 00:00:00 CET 2012, Open: 35.0, High: 35.0, Low: 33.35, Close: 33.73, Relevant: 33.73
+Trying to find line, start 233 = Tue Jan 24 00:00:00 CET 2012
+Berï¿½hrung bei 251
+Datum: Fri Feb 17 00:00:00 CET 2012, Open: 39.5, High: 40.0, Low: 39.43, Close: 39.6, Relevant: 39.6
+Trying to find line, start 251 = Fri Feb 17 00:00:00 CET 2012
+COULD NOT FIND LONG TREND, TAKING LAST TREND
+-----------TREND--------------
+von: Tue Jan 24 00:00:00 CET 2012 33.73
+bis: Fri Feb 17 00:00:00 CET 2012 39.6
+-----------TREND--------------
+X: 233, Y: 33.73, Steigung: 0.32728070175438656, Berührung: 251
+
+
+
+Anzahl Werte: 259
+
+
+
+getting current price...
+parsed...
+Got current value from 1st URL
+Price: 14,92
+Trying: WDI.DE
+aktueller Preis: 14.92
+Kleinster Wert Datum: Mon Aug 08 00:00:00 CEST 2011 Wert:9.97
+Maximum: 14.8
+inc=0.0161
+Trying to find line, start 113 = Mon Aug 08 00:00:00 CEST 2011
+Berï¿½hrung bei 205
+Datum: Wed Dec 14 00:00:00 CET 2011, Open: 11.9, High: 11.95, Low: 11.57, Close: 11.65, Relevant: 11.65
+-----------TREND--------------
+von: Mon Aug 08 00:00:00 CEST 2011 9.97
+bis: Wed Dec 14 00:00:00 CET 2011 11.65
+-----------TREND--------------
+X: 113, Y: 9.97, Steigung: 0.018284999999999947, Berührung: 205
+cmdn4002050
+period: 12
+name: Vestas
+fertig mit 51 Werten
