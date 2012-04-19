@@ -91,7 +91,7 @@ class OutputInfo implements Comparable{
 		if (hasHammerShape() && isDownTrend())
 		{
 			this.candleTitle = candleTitle+"Hammer: Untere Umkehr, kurzer Körper, der oben sitzt. "
-			this.candleInfo = candleInfo+"Hammer "
+			this.candleInfo = candleInfo+" Hammer "
 		}
 		if (hasHammerShape() && isUpTrend())
 		{
