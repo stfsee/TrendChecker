@@ -86,6 +86,37 @@ class OutputInfo implements Comparable{
 		return !isUpTrend()
 	}
 	
+	boolean isBigBlack(StockValue value)
+	{
+		if (value.close > value.open)
+		{
+			return false
+		}
+
+		double percentageDiff = (value.open-value.close)/value.close
+		
+		if (percentageDiff > 0.01)
+		{
+			return true
+		}
+		return false
+	}
+	
+	boolean isBigWhite(StockValue value)
+	{
+		if (value.close < value.open)
+		{
+			return false
+		}
+
+		double percentageDiff = (value.close-value.open)/value.open
+		if (percentageDiff > 0.01)
+		{
+			return true
+		}
+		return false
+	}
+	
 	void checkHammer()
 	{
 		if (hasHammerShape() && isDownTrend())
@@ -120,11 +151,22 @@ class OutputInfo implements Comparable{
 			}
 		}
 	}
+	
+	void checkDarkCloudCover()
+	{
+		StockValue secondToLast = values.get(values.size-2)
+		if (isBigWhite(secondToLast) && (this.last.open < this.last.close) && (this.last.high > secondToLast.high) && (this.last.close < secondToLast.close))
+		{
+			this.candleTitle = candleTitle+" Dark Cloud Cover: \nObere Umkehr, zweite Kerze tief in vorletzter"
+			this.candleInfo = candleInfo+" Dark Cloud Cover "
+		}
+	}
 
 	void checkCandles()
 	{
 		checkHammer()
 		checkEngulfing()
+		checkDarkCloudCover()
 	}
 	
 	String getOutputLinesWithTrends() {
