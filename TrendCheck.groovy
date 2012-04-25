@@ -230,6 +230,12 @@ public class TrendCheck {
 			problems << new OutputInfo(stock,MONTH,errorMessage)
 			return
 		}
+		catch(java.net.ConnectException ex){
+			String errorMessage = "ConnectException: "+ex
+			println errorMessage
+			problems << new OutputInfo(stock,MONTH,errorMessage)
+			return
+		}
 		values = values.reverse()
 
 		for(int i = 0;  i < values.size; i++){

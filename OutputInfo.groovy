@@ -117,6 +117,11 @@ class OutputInfo implements Comparable{
 		return false
 	}
 	
+	boolean isWhite(StockValue value)
+	{
+		return (value.close > value.open)
+	}
+	
 	void checkHammer()
 	{
 		if (hasHammerShape() && isDownTrend())
@@ -162,11 +167,32 @@ class OutputInfo implements Comparable{
 		}
 	}
 
+	void checkMorningStar()
+	{
+		StockValue thirdToLast = values.get(values.size-3)
+		StockValue secondToLast = values.get(values.size-2)
+		if (isDownTrend() && isBigBlack(thirdToLast))
+		{
+			if (!isBigBlack(secondToLast) && !isBigWhite(secondToLast))
+			{
+				if ((isWhite(secondToLast) && secondToLast.close < thirdToLast.close) || !(isWhite(secondToLast) && secondToLast.open < thirdToLast.close))
+				{
+					if (isWhite(this.last) && this.last.close > thirdToLast.close)
+					{
+						this.candleTitle = candleTitle+" Morning Star: \nUntere Umkehr mit 3 Kerzen, mittlere unter den anderen"
+						this.candleInfo = candleInfo + " Morning Star "
+					}
+				}
+			}
+		}
+	}
+	
 	void checkCandles()
 	{
 		checkHammer()
 		checkEngulfing()
 		checkDarkCloudCover()
+		checkMorningStar()
 	}
 	
 	String getOutputLinesWithTrends() {
