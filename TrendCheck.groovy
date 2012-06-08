@@ -32,6 +32,7 @@ public class TrendCheck {
 	ArrayList<OutputInfo> notNears = new ArrayList<OutputInfo>()
 	ArrayList<OutputInfo> noTrends = new ArrayList<OutputInfo>()
 	ArrayList<OutputInfo> problems = new ArrayList<OutputInfo>()
+	ArrayList<OutputInfo> downTrends = new ArrayList<OutputInfo>()
 
 	StockValue importLine(line, lineCount, relevant) {
 		if (lineCount == 0) {
@@ -165,7 +166,7 @@ public class TrendCheck {
 			return values.get(nextMin).relevant
 	}
 
-	Line findLine(ArrayList<StockValue> values, int minIndex, double inc){
+	Line findUpTrendLine(ArrayList<StockValue> values, int minIndex, double inc){
 		Date minDate = values.get(minIndex).date
 		println "Trying to find line, start $minIndex = $minDate"
 		double currentInc = 0
@@ -179,7 +180,7 @@ public class TrendCheck {
 			//println "TickInc: $tickInc"
 			for (int j = minIndex+MIN_DISTANCE; j <= lastIndex; j++) {
 				if ((minValue + (j-minIndex)*tickInc) > values.get(j).relevant){
-					println "Berï¿½hrung bei $j"
+					println "Berührung bei $j"
 					println values.get(j)
 					return new Line(minIndex, minValue, tickInc,j)
 				}
@@ -189,6 +190,10 @@ public class TrendCheck {
 
 	boolean isSecondMinTouched(Line line, nextMinIndex){
 		return line.touchIndex == nextMinIndex
+	}
+	
+	boolean isDownTrend(ArrayList<StockValue> values){
+		return (values.get(0).getClose() > 1.05*values.get(values.size-1).getClose())
 	}
 
 	void importStocks(ArrayList<Stock> stocks, File stocksFile){
@@ -271,7 +276,9 @@ public class TrendCheck {
 		double inc = (maxClose - minValue.relevant) / INCREMENTS
 		println "inc=$inc"
 
-		Line trend = findLine(values, minValue.index, inc)
+		isDownTrend(values)
+		
+		Line trend = findUpTrendLine(values, minValue.index, inc)
 
 		Line lastTrend
 		StockValue lastMinValue
@@ -280,7 +287,7 @@ public class TrendCheck {
 			lastTrend = trend
 			lastMinValue = minValue
 			minValue = values.get(trend.touchIndex)
-			trend = findLine(values, minValue.index, inc)
+			trend = findUpTrendLine(values, minValue.index, inc)
 		}
 
 		if (trend == null && lastTrend == null){

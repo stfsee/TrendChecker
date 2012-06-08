@@ -160,7 +160,7 @@ class OutputInfo implements Comparable{
 	void checkDarkCloudCover()
 	{
 		StockValue secondToLast = values.get(values.size-2)
-		if (isBigWhite(secondToLast) && (this.last.open < this.last.close) && (this.last.high > secondToLast.high) && (this.last.close < secondToLast.close))
+		if (isBigWhite(secondToLast) && (this.last.open < this.last.close) && (this.last.open > secondToLast.high) && (this.last.close < secondToLast.close))
 		{
 			this.candleTitle = candleTitle+" Dark Cloud Cover: \nObere Umkehr, zweite Kerze tief in vorletzter"
 			this.candleInfo = candleInfo+" Dark Cloud Cover "
