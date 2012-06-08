@@ -28,11 +28,12 @@ public class TrendCheck {
 
 	int relevant = StockValue.CLOSE
 
-	ArrayList<OutputInfo> nears = new ArrayList<OutputInfo>()
-	ArrayList<OutputInfo> notNears = new ArrayList<OutputInfo>()
+	ArrayList<OutputInfo> upTrendNears = new ArrayList<OutputInfo>()
+	ArrayList<OutputInfo> upTrendNotNears = new ArrayList<OutputInfo>()
+	ArrayList<OutputInfo> downTrendNears = new ArrayList<OutputInfo>()
+	ArrayList<OutputInfo> downTrendNotNears = new ArrayList<OutputInfo>()
 	ArrayList<OutputInfo> noTrends = new ArrayList<OutputInfo>()
 	ArrayList<OutputInfo> problems = new ArrayList<OutputInfo>()
-	ArrayList<OutputInfo> downTrends = new ArrayList<OutputInfo>()
 
 	StockValue importLine(line, lineCount, relevant) {
 		if (lineCount == 0) {
@@ -158,6 +159,17 @@ public class TrendCheck {
 		}
 		return minValue
 	}
+	
+	StockValue findMax(ArrayList<StockValue> values) {
+		double max = 0.0
+		StockValue maxValue = new StockValue()
+		maxValue.relevant = max
+		for(StockValue value : values){
+			if (value.relevant >= maxValue.relevant)
+				maxValue = value
+		}
+		return maxValue
+	}
 
 	double findMinClose(ArrayList<StockValue> values, int firstMin, int nextMin) {
 		if (values.get(firstMin).relevant < values.get(nextMin).relevant)
@@ -165,10 +177,33 @@ public class TrendCheck {
 		else
 			return values.get(nextMin).relevant
 	}
+	
+	Line findDownTrendLine(ArrayList<StockValue> values, int maxIndex, double inc){
+		Date maxDate = values.get(maxIndex).date
+		println "Trying to find downtrend line, start $maxIndex = $maxDate"
+		double currentInc = 0
+		int lastIndex = values.size()-1-IGNORE_LAST_DAYS
+		int valuesCount = lastIndex - maxIndex
+		double tickInc = 0
+		double maxValue = values.get(maxIndex).relevant
+		println "MaxValue = $maxValue"
+		for (int i = 0; i < INCREMENTS; i++) {
+			currentInc += inc
+			tickInc = currentInc / valuesCount
+			//println "TickInc: $tickInc"
+			for (int j = maxIndex+MIN_DISTANCE; j <= lastIndex; j++) {
+				if ((maxValue - (j-maxIndex)*tickInc) < values.get(j).relevant){
+					println "Berührung bei $j"
+					println values.get(j)
+					return new Line(maxIndex, maxValue, -1*tickInc,j)
+				}
+			}
+		}
+	}
 
 	Line findUpTrendLine(ArrayList<StockValue> values, int minIndex, double inc){
 		Date minDate = values.get(minIndex).date
-		println "Trying to find line, start $minIndex = $minDate"
+		println "Trying to find uptrend line, start $minIndex = $minDate"
 		double currentInc = 0
 		int lastIndex = values.size()-1-IGNORE_LAST_DAYS
 		int valuesCount = lastIndex - minIndex
@@ -269,57 +304,112 @@ public class TrendCheck {
 
 		StockValue minValue = findMin(values)
 		println "Kleinster Wert Datum: $minValue.date Wert:$minValue.relevant"
-
+		
+		StockValue maxValue = findMax(values)
+		println "Größter Wert Datum: $maxValue.date Wert:$maxValue.relevant"
+		
 		double maxClose = findMaxClose(values)
 		println "Maximum: $maxClose"
 
 		double inc = (maxClose - minValue.relevant) / INCREMENTS
 		println "inc=$inc"
 
-		isDownTrend(values)
-		
-		Line trend = findUpTrendLine(values, minValue.index, inc)
-
 		Line lastTrend
 		StockValue lastMinValue
+		StockValue lastMaxValue
 
-		while (trend != null && trend.touchIndex-minValue.index < SIGNIFICANT_DISTANCE && trend.touchIndex < (values.size()-IGNORE_LAST_DAYS) ){
-			lastTrend = trend
-			lastMinValue = minValue
-			minValue = values.get(trend.touchIndex)
+		Line trend
+		
+		boolean goesDown = isDownTrend(values) 
+
+		if (goesDown)
+		{
+			println "DOWNTREND"
+			trend = findDownTrendLine(values, maxValue.index, inc)
+			// hat der Berührpuntk genug Abstand zum Tiefpunkt? (touchIndex-minValue < Significatn_distance?
+			// Liegt der touchIndex früh genut (nicht in den letzten <Ignore_last_days> Tagen?
+			while (trend != null && trend.touchIndex-maxValue.index < SIGNIFICANT_DISTANCE && trend.touchIndex < (values.size()-IGNORE_LAST_DAYS) ){
+				lastTrend = trend
+				lastMaxValue = maxValue
+				maxValue = values.get(trend.touchIndex)
+				trend = findUpTrendLine(values, maxValue.index, inc)
+			}
+	
+			if (trend == null && lastTrend == null){
+				println "COULD NOT FIND ANY TREND"
+				noTrends << new OutputInfo(stock,MONTH,currentPrice)
+				return
+			}
+	
+			if (trend == null && lastTrend != null){
+				println "COULD NOT FIND LONG TREND, TAKING LAST TREND"
+				minValue = lastMinValue
+				trend = lastTrend
+			}
+		}
+		else
+		{
+			println "UPTREND"
 			trend = findUpTrendLine(values, minValue.index, inc)
+			while (trend != null && trend.touchIndex-minValue.index < SIGNIFICANT_DISTANCE && trend.touchIndex < (values.size()-IGNORE_LAST_DAYS) ){
+				lastTrend = trend
+				lastMinValue = minValue
+				minValue = values.get(trend.touchIndex)
+				trend = findUpTrendLine(values, minValue.index, inc)
+			}
+	
+			if (trend == null && lastTrend == null){
+				println "COULD NOT FIND ANY TREND"
+				noTrends << new OutputInfo(stock,MONTH,currentPrice)
+				return
+			}
+	
+			if (trend == null && lastTrend != null){
+				println "COULD NOT FIND LONG TREND, TAKING LAST TREND"
+				minValue = lastMinValue
+				trend = lastTrend
+			}
 		}
-
-		if (trend == null && lastTrend == null){
-			println "COULD NOT FIND ANY TREND"
-			noTrends << new OutputInfo(stock,MONTH,currentPrice)
-			return
-		}
-
-		if (trend == null && lastTrend != null){
-			println "COULD NOT FIND LONG TREND, TAKING LAST TREND"
-			minValue = lastMinValue
-			trend = lastTrend
-		}
-
 
 		StockValue trendEndValue = values.get(trend.touchIndex)
 
-		println "-----------TREND--------------"
-		println "von: $minValue.date $minValue.relevant"
-		println "bis: $trendEndValue.date $trendEndValue.relevant"
-		println "-----------TREND--------------"
+		if (goesDown)
+		{
+			println "-----------TREND--------------"
+			println "von: $maxValue.date $maxValue.relevant"
+			println "bis: $trendEndValue.date $trendEndValue.relevant"
+			println "-----------TREND--------------"
+		}
+		else{
+			println "-----------TREND--------------"
+			println "von: $minValue.date $minValue.relevant"
+			println "bis: $trendEndValue.date $trendEndValue.relevant"
+			println "-----------TREND--------------"
+		}
 
 		double lastTrendValue = getLastTrendValue(trend,values.size)
 		String lastTrendValueFormatted = sprintf("%.2f", lastTrendValue)
 
 		String start = formattedDate(values.get(trend.startX).date);
 		double trendDiff = trendDiff(lastTrendValue, currentPrice)
-		if (isNear(trendDiff) ) {
-			nears << new OutputInfo(stock,MONTH,start,lastTrendValueFormatted,trendDiff,currentPrice,values)
+		
+		if (goesDown)
+		{
+			if (isNear(trendDiff) ) {
+				downTrendNears << new OutputInfo(stock,MONTH,start,lastTrendValueFormatted,trendDiff,currentPrice,values)
+			}
+			else {
+				downTrendNotNears << new OutputInfo(stock,MONTH,start,lastTrendValueFormatted,trendDiff,currentPrice,values)
+			}
 		}
-		else {
-			notNears << new OutputInfo(stock,MONTH,start,lastTrendValueFormatted,trendDiff,currentPrice,values)
+		else
+		{
+			if (isNear(trendDiff) ) {
+				upTrendNears << new OutputInfo(stock,MONTH,start,lastTrendValueFormatted,trendDiff,currentPrice,values)
+			}
+			else {
+				upTrendNotNears << new OutputInfo(stock,MONTH,start,lastTrendValueFormatted,trendDiff,currentPrice,values)
+			}
 		}
 		
 	}
@@ -334,14 +424,24 @@ public class TrendCheck {
 		return dateTimeFormat.format(date); 
 	}
 	void writeOutput(File outputFile){
-		outputFile.append("<br/>trendnah: $nears.size<br/>")
-		Collections.sort(nears)
-		for (OutputInfo nearOutputInfo : nears) {
+		outputFile.append("<br/>Uptrend trendnah: $upTrendNears.size<br/>")
+		Collections.sort(upTrendNears)
+		for (OutputInfo nearOutputInfo : upTrendNears) {
 			outputFile.append(nearOutputInfo.getOutputLinesWithTrends())
 		}
-		outputFile.append("<br/>trendfern: $notNears.size<br/>")
-		Collections.sort(notNears)
-		for (OutputInfo notNearOutputInfo : notNears) {
+		outputFile.append("<br/>Downtrend trendnah: $downTrendNears.size<br/>")
+		Collections.sort(downTrendNears)
+		for (OutputInfo nearOutputInfo : downTrendNears) {
+			outputFile.append(nearOutputInfo.getOutputLinesWithTrends())
+		}
+		outputFile.append("<br/>UpTrend trendfern: $upTrendNotNears.size<br/>")
+		Collections.sort(upTrendNotNears)
+		for (OutputInfo notNearOutputInfo : upTrendNotNears) {
+			outputFile.append(notNearOutputInfo.getOutputLinesWithTrends())
+		}
+		outputFile.append("<br/>DownTrend trendfern: $downTrendNotNears.size<br/>")
+		Collections.sort(downTrendNotNears)
+		for (OutputInfo notNearOutputInfo : downTrendNotNears) {
 			outputFile.append(notNearOutputInfo.getOutputLinesWithTrends())
 		}
 		outputFile.append("<br/>ohne Trend: $noTrends.size<br/>")
