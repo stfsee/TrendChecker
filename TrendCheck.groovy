@@ -424,24 +424,24 @@ public class TrendCheck {
 		return dateTimeFormat.format(date); 
 	}
 	void writeOutput(File outputFile){
-		outputFile.append("<br/>Uptrend trendnah: $upTrendNears.size<br/>")
-		Collections.sort(upTrendNears)
-		for (OutputInfo nearOutputInfo : upTrendNears) {
-			outputFile.append(nearOutputInfo.getOutputLinesWithTrends())
-		}
 		outputFile.append("<br/>Downtrend trendnah: $downTrendNears.size<br/>")
 		Collections.sort(downTrendNears)
 		for (OutputInfo nearOutputInfo : downTrendNears) {
 			outputFile.append(nearOutputInfo.getOutputLinesWithTrends())
 		}
-		outputFile.append("<br/>UpTrend trendfern: $upTrendNotNears.size<br/>")
-		Collections.sort(upTrendNotNears)
-		for (OutputInfo notNearOutputInfo : upTrendNotNears) {
-			outputFile.append(notNearOutputInfo.getOutputLinesWithTrends())
-		}
 		outputFile.append("<br/>DownTrend trendfern: $downTrendNotNears.size<br/>")
 		Collections.sort(downTrendNotNears)
 		for (OutputInfo notNearOutputInfo : downTrendNotNears) {
+			outputFile.append(notNearOutputInfo.getOutputLinesWithTrends())
+		}
+		outputFile.append("<br/>Uptrend trendnah: $upTrendNears.size<br/>")
+		Collections.sort(upTrendNears)
+		for (OutputInfo nearOutputInfo : upTrendNears) {
+			outputFile.append(nearOutputInfo.getOutputLinesWithTrends())
+		}
+		outputFile.append("<br/>UpTrend trendfern: $upTrendNotNears.size<br/>")
+		Collections.sort(upTrendNotNears)
+		for (OutputInfo notNearOutputInfo : upTrendNotNears) {
 			outputFile.append(notNearOutputInfo.getOutputLinesWithTrends())
 		}
 		outputFile.append("<br/>ohne Trend: $noTrends.size<br/>")
