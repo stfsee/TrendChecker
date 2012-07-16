@@ -326,7 +326,7 @@ public class TrendCheck {
 		{
 			println "DOWNTREND"
 			trend = findDownTrendLine(values, maxValue.index, inc)
-			// hat der Berührpuntk genug Abstand zum Tiefpunkt? (touchIndex-minValue < Significatn_distance?
+			// hat der Berührpuntk genug Abstand zum Tiefpunkt? (touchIndex-minValue < Significant_distance?
 			// Liegt der touchIndex früh genut (nicht in den letzten <Ignore_last_days> Tagen?
 			while (trend != null && trend.touchIndex-maxValue.index < SIGNIFICANT_DISTANCE && trend.touchIndex < (values.size()-IGNORE_LAST_DAYS) ){
 				lastTrend = trend

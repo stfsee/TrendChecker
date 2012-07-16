@@ -166,6 +166,15 @@ class OutputInfo implements Comparable{
 			this.candleInfo = candleInfo+" Dark Cloud Cover "
 		}
 	}
+	
+	String getFourWP()
+	{
+		double fourWeeksAgo = values.get(values.size-20).close
+		double fourWP = (this.last.close - fourWeeksAgo)/this.last.close
+		println "this last = "+this.last.close
+		println "currentval = "+this.currentPrice
+		return sprintf("%.2f", fourWP*100)
+	}
 
 	void checkMorningStar()
 	{
@@ -213,17 +222,21 @@ class OutputInfo implements Comparable{
 			outLine.append ("</font>")
 		}
 		outLine.append ' Abstand zum Trend: '+trendDiffFormatted+'%'
+		outLine.append ' 4WP='+getFourWP()+'%'
 		outLine.append("</div>") 
 		//outLine.append('</br>\n')
 		return outLine
 	}
 	
 	String getOutputLinesWithoutTrends() {
+println "WITHOUT TRENDS:"
 println "cmdn"+stock.comdNotationId
 println "period: "+period
 println "name: "+stock.name
+println "values = "+values
+
 		String currentPriceFormatted = sprintf("%.2f", currentPrice)
-		return '<a href="http://www.comdirect.de/inf/aktien/detail/chart.html?ID_NOTATION='+stock.comdNotationId+'&timeSpan='+period+'M'+indicators+'" target="_blank">'+stock.name+'</a> '+currentPriceFormatted+'</br>' 
+		return '<a href="http://www.comdirect.de/inf/aktien/detail/chart.html?ID_NOTATION='+stock.comdNotationId+'&timeSpan='+period+'M'+indicators+'" target="_blank">'+stock.name+'</a> '+currentPriceFormatted+ ' 4WP = '+getFourWP()+'%</br>' 
 	}
 	
 	String getOutputLinesForProblems() {
