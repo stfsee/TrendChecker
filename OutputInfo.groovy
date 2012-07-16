@@ -175,6 +175,11 @@ class OutputInfo implements Comparable{
 		println "currentval = "+this.currentPrice
 		return sprintf("%.2f", fourWP*100)
 	}
+	
+	String getFourWVar()
+	{
+		// für die letzten 20 Werte die tägliche %-Steigerung berechnen und den Mittelwert der täglichen %-Steigerung
+	}
 
 	void checkMorningStar()
 	{
