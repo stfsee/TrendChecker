@@ -236,7 +236,7 @@ println "name: "+stock.name
 println "values = "+values
 
 		String currentPriceFormatted = sprintf("%.2f", currentPrice)
-		return '<a href="http://www.comdirect.de/inf/aktien/detail/chart.html?ID_NOTATION='+stock.comdNotationId+'&timeSpan='+period+'M'+indicators+'" target="_blank">'+stock.name+'</a> '+currentPriceFormatted+ ' 4WP = '+getFourWP()+'%</br>' 
+		return '<a href="http://www.comdirect.de/inf/aktien/detail/chart.html?ID_NOTATION='+stock.comdNotationId+'&timeSpan='+period+'M'+indicators+'" target="_blank">'+stock.name+'</a> '+currentPriceFormatted+ '</br>' 
 	}
 	
 	String getOutputLinesForProblems() {
