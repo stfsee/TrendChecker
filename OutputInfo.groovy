@@ -167,13 +167,14 @@ class OutputInfo implements Comparable{
 		}
 	}
 	
-	String getFourWP()
+	double getFourWP()
 	{
 		double fourWeeksAgo = values.get(values.size-20).close
 		double fourWP = (this.last.close - fourWeeksAgo)/this.last.close
 		println "this last = "+this.last.close
 		println "currentval = "+this.currentPrice
-		return sprintf("%.2f", fourWP*100)
+		println "4 WP = " +sprintf("%.2f", fourWP*100)
+		return fourWP
 	}
 	
 	String getFourWVar()
@@ -227,7 +228,12 @@ class OutputInfo implements Comparable{
 			outLine.append ("</font>")
 		}
 		outLine.append ' Abstand zum Trend: '+trendDiffFormatted+'%'
-		outLine.append ' 4WP='+getFourWP()+'%'
+		
+		double fourWP = getFourWP()
+		if (fourWP > 0)
+		{
+			outLine.append ' 4WP='+sprintf("%.2f", fourWP*100)+'%'
+		}
 		outLine.append("</div>") 
 		//outLine.append('</br>\n')
 		return outLine
