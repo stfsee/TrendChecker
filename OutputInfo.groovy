@@ -177,9 +177,34 @@ class OutputInfo implements Comparable{
 		return fourWP
 	}
 	
-	String getFourWVar()
+	double getFourWVar()
 	{
-		// für die letzten 20 Werte die tägliche %-Steigerung berechnen und den Mittelwert der täglichen %-Steigerung
+		ArrayList<Double> rocs = new ArrayList<Double>()
+		double roc = 0.0
+		int count = 0
+		for (int i = 22; i>2; i--)
+		{
+			//println values.get(values.size-i).close
+			roc = (values.get(values.size-i).close - values.get(values.size-i-1).close)/ values.get(values.size-i-1).close
+			rocs.add(roc*100)
+			count++
+		}
+		//println "size of rocs: $rocs.size"
+		//println "now printing the $count rocs:"
+		double mean = 0
+		for(int i = 0; i< rocs.size; i++)
+		{
+			//println sprintf("%.3f",rocs.get(i))
+			mean += rocs.get(i)
+		}
+		mean = mean/rocs.size
+		//println "Mittelwert: $mean"
+		double varianz = 0
+		for(int i = 0; i< rocs.size; i++)
+		{
+			varianz += (rocs.get(i)-mean)*(rocs.get(i)-mean)
+		}
+		return varianz / (rocs.size-1)
 	}
 
 	void checkMorningStar()
@@ -233,6 +258,7 @@ class OutputInfo implements Comparable{
 		if (fourWP > 0)
 		{
 			outLine.append ' 4WP='+sprintf("%.2f", fourWP*100)+'%'
+			outLine.append ' 4WVar='+sprintf("%.2f", getFourWVar())+'%'
 		}
 		outLine.append("</div>") 
 		//outLine.append('</br>\n')

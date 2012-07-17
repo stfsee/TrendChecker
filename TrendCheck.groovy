@@ -79,6 +79,7 @@ public class TrendCheck {
 		println "Price: $price"
 		println "Trying: $symbol"
     try{
+		
     		return nf.parse(price)
     }
     catch(java.text.ParseException ex)
@@ -290,6 +291,8 @@ public class TrendCheck {
 		String symbol = stock.symbol
 		def lineCount = 0
 		def url = createUrl(symbol, days).toURL()
+		
+		println "New Stock: $symbol"
 
 		ArrayList<StockValue> values = importStockValues(stock, url)
 
