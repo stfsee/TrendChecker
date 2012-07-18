@@ -258,7 +258,7 @@ class OutputInfo implements Comparable{
 		if (fourWP > 0)
 		{
 			outLine.append ' 4WP='+sprintf("%.2f", fourWP*100)+'%'
-			outLine.append ' 4WVar='+sprintf("%.2f", getFourWVar())+'%'
+			outLine.append ' 4WVar='+sprintf("%.2f", getFourWVar())
 		}
 		outLine.append("</div>") 
 		//outLine.append('</br>\n')
