@@ -207,6 +207,33 @@ class OutputInfo implements Comparable{
 		return varianz / (rocs.size-1)
 	}
 
+	double getFourWDailyVar()
+	{
+		ArrayList<Double> dailyVars = new ArrayList<Double>()
+		double dailyVar = 0.0
+		int count = 0
+		//println "Daily Vars:"
+		for (int i = 22; i>2; i--)
+		{
+			//println values.get(values.size-i).high
+			dailyVar = (values.get(values.size-i).high - values.get(values.size-i).low)/ values.get(values.size-i).close
+			dailyVars.add(dailyVar*100)
+			//print sprintf("%.3f ", dailyVar)
+			count++
+		}
+		//println "size of dailyVars: $dailyVars.size"
+		//println "now printing the $count dailyVars:"
+		double mean = 0
+		for(int i = 0; i < dailyVars.size; i++)
+		{
+			//println sprintf("%.3f",dailyVars.get(i))
+			mean += dailyVars.get(i)
+		}
+		mean = mean/dailyVars.size
+		//println "Mittelwert: $mean"
+		return mean
+	}
+	
 	void checkMorningStar()
 	{
 		StockValue thirdToLast = values.get(values.size-3)
@@ -259,10 +286,12 @@ class OutputInfo implements Comparable{
 		{
 			outLine.append ' P='+sprintf("%.2f", fourWP*100)+'%'
 			double fourWVar = getFourWVar()
-			outLine.append ' Var='+sprintf("%.2f", fourWVar)
-			outLine.append ' P/Var='+sprintf("%.2f", fourWP*100/fourWVar)
+			outLine.append ' <span title="Varianzen der letzten 4 Wochen, basierend auf ROC"> Var='+sprintf("%.2f", fourWVar) + "</span>"
+			outLine.append ' <span title="Performance/Varianz der letzten 4 Wochen"> P/Var='+sprintf("%.2f", fourWP*100/fourWVar) + "</span>"
 		}
-		outLine.append("</div>") 
+		double fourWDailyVar = getFourWDailyVar()
+		outLine.append ' <span title="Mittelwert der t‰glichen Varianzen der letzten 4 Wochen">DVarÿ='+sprintf("%.2f", fourWDailyVar)
+		outLine.append("</span></div>") 
 		//outLine.append('</br>\n')
 		return outLine
 	}
