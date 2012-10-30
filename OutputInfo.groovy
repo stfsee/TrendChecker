@@ -182,7 +182,7 @@ class OutputInfo implements Comparable{
 		ArrayList<Double> rocs = new ArrayList<Double>()
 		double roc = 0.0
 		int count = 0
-		for (int i = 22; i>2; i--)
+		for (int i = 22; i>1; i--)
 		{
 			//println values.get(values.size-i).close
 			roc = (values.get(values.size-i).close - values.get(values.size-i-1).close)/ values.get(values.size-i-1).close
@@ -212,13 +212,13 @@ class OutputInfo implements Comparable{
 		ArrayList<Double> dailyVars = new ArrayList<Double>()
 		double dailyVar = 0.0
 		int count = 0
-		//println "Daily Vars:"
-		for (int i = 22; i>2; i--)
+		//println "Daily Vars: "+stock.getName()
+		for (int i = 22; i>0; i--)
 		{
 			//println values.get(values.size-i).high
 			dailyVar = (values.get(values.size-i).high - values.get(values.size-i).low)/ values.get(values.size-i).close
 			dailyVars.add(dailyVar*100)
-			//print sprintf("%.3f ", dailyVar)
+			//println sprintf("%.3f %.3f %.3f %.3f", values.get(values.size-i).high, values.get(values.size-i).low, values.get(values.size-i).close, dailyVar)
 			count++
 		}
 		//println "size of dailyVars: $dailyVars.size"
