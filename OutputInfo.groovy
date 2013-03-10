@@ -48,6 +48,10 @@ class OutputInfo implements Comparable{
 		double bodyTopPercentage
 		double bodyToShadow
 		println "HAS HAMMER SHAPE? LAST CLOSE: $last.close"
+		if (Math.abs(last.high - last.low) < last.low*0.01)
+		{
+			return false;
+		}
 		if (last.close >= last.open)
 		{
 			bodyTopPercentage = (last.close - last.low)/(last.high-last.low)
@@ -68,7 +72,7 @@ class OutputInfo implements Comparable{
 			println "bodyToShadow = $bodyToShadow"
 			
 		}
-		if (bodyTopPercentage >= 0.9 && bodyToShadow <= 0.5)
+		if (bodyTopPercentage >= 0.8 && bodyToShadow <= 0.5)
 		{
 			return true
 		}
@@ -76,6 +80,45 @@ class OutputInfo implements Comparable{
 		return false
 	}
 	
+	boolean hasInvertedHammerShape()
+	{
+		double bodyTopPercentage
+		double bodyToShadow
+		// high 27,61 low 27,35 close 27,45 open 27,49
+		println "HAS INVERTED HAMMER SHAPE? LAST CLOSE: $last.close"
+		println "inverted hammer: high: $last.high low: $last.low close: $last.close open: $last.open"
+		if (Math.abs(last.high - last.low) < last.low*0.01)
+		{
+			return false;
+		}
+		if (last.close >= last.open)
+		{
+			bodyTopPercentage = (last.close - last.low)/(last.high-last.low)
+			println "close >= open"
+			println "bodyTopPercentage = $bodyTopPercentage"
+			
+			bodyToShadow = (last.close - last.open)/(last.high - last.close)
+			println "bodyToShadow = $bodyToShadow"
+			
+		}
+		else
+		{
+			bodyTopPercentage = (last.open - last.close)/(last.high-last.low)
+			println "close < open"
+			println "bodyTopPercentage = $bodyTopPercentage"
+			
+			bodyToShadow = (last.open - last.close)/(last.high - last.open)
+			println "bodyToShadow = $bodyToShadow"
+			
+		}
+		if (bodyTopPercentage <= 0.2 && bodyToShadow <= 0.5)
+		{
+			return true
+		}
+
+		return false
+	}
+
 	boolean isUpTrend()
 	{
 		return (last.close > (values.get(values.size-5)).close)
@@ -136,6 +179,15 @@ class OutputInfo implements Comparable{
 		}
 	}
 	
+	void checkInvertedHammer()
+	{
+		if (hasInvertedHammerShape())
+		{
+			this.candleTitle = candleTitle+"InvertedHammer: kurzer Körper, der unten sitzt. "
+			this.candleInfo = candleInfo+" InvertedHammer "
+		}
+	}
+
 	void checkEngulfing()
 	{
 		StockValue secondToLast = values.get(values.size-2)
@@ -257,6 +309,7 @@ class OutputInfo implements Comparable{
 	void checkCandles()
 	{
 		checkHammer()
+		checkInvertedHammer()
 		checkEngulfing()
 		checkDarkCloudCover()
 		checkMorningStar()
