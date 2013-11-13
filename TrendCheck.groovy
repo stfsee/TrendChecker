@@ -1,3 +1,8 @@
+/**
+* Auf http://www.finanzen.net/kurse/kurse_historisch.asp gibt es bessere historische Kurse, die enden nicht drei Tage vorher!
+*
+*/
+
 import java.util.Iterator;
 
 import java.text.NumberFormat
@@ -423,15 +428,39 @@ public class TrendCheck {
 	}
 	
 	String formattedDateTime(Date date)
-	{   SimpleDateFormat dateTimeFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss", Locale.GERMAN);
+	{   
+		SimpleDateFormat dateTimeFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss", Locale.GERMAN);
 		return dateTimeFormat.format(date); 
 	}
+	
+	String getTableStart(String tableName)
+	{
+		return "<table id=\""+tableName+" class=\"tablesorter\">"+
+		"<thead>"+
+		"<tr>"+
+			"<th>Name</th>"+
+			"<th>Current Price</th>"+
+			"<th>Candle</th>"+
+			"<th>Trendstart</th>"+
+			"<th>Letzter Wert</th>"+
+			"<th>Trendabstand</th>"+
+			"<th>4 Week P</th>"+
+			"<th>4 Week Var</th>"+
+			"<th>P/Var</th>"+
+			"<th>DVarÿ</th>"+
+		"</tr>"+
+		"</thead>"+
+		"<tbody>"
+	}
+	
 	void writeOutput(File outputFile){
 		outputFile.append("<br/>Downtrend trendnah: $downTrendNears.size<br/>")
 		Collections.sort(downTrendNears)
+		outputFile.append(getTableStart("downTrendNears"))
 		for (OutputInfo nearOutputInfo : downTrendNears) {
 			outputFile.append(nearOutputInfo.getOutputLinesWithTrends())
 		}
+		outputFile.append(getTableEnd())
 		outputFile.append("<br/>DownTrend trendfern: $downTrendNotNears.size<br/>")
 		Collections.sort(downTrendNotNears)
 		for (OutputInfo notNearOutputInfo : downTrendNotNears) {

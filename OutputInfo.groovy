@@ -99,7 +99,7 @@ class OutputInfo implements Comparable{
 			
 			bodyToShadow = (last.close - last.open)/(last.high - last.close)
 			println "bodyToShadow = $bodyToShadow"
-			
+			//hier fehlt sowas wie open sitzt hoch
 		}
 		else
 		{
@@ -109,6 +109,7 @@ class OutputInfo implements Comparable{
 			
 			bodyToShadow = (last.open - last.close)/(last.high - last.open)
 			println "bodyToShadow = $bodyToShadow"
+			// hier fehlt sowas wie: open sitzt sehr tief
 			
 		}
 		if (bodyTopPercentage <= 0.2 && bodyToShadow <= 0.5)
@@ -184,7 +185,7 @@ class OutputInfo implements Comparable{
 		if (hasInvertedHammerShape())
 		{
 			this.candleTitle = candleTitle+"InvertedHammer: kurzer Körper, der unten sitzt. "
-			this.candleInfo = candleInfo+" InvertedHammer "
+			this.candleInfo = candleInfo+" InvertedHammer "+last.date
 		}
 	}
 
