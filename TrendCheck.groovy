@@ -435,6 +435,7 @@ public class TrendCheck {
 	
 	String getTableStart(String tableName)
 	{
+		// Besser wohl einen Table und in erste Spalte Tabletype
 		return "<table id=\""+tableName+" class=\"tablesorter\">"+
 		"<thead>"+
 		"<tr>"+
