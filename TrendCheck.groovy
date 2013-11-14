@@ -1,6 +1,12 @@
 /**
 * Auf http://www.finanzen.net/kurse/kurse_historisch.asp gibt es bessere historische Kurse, die enden nicht drei Tage vorher!
-*
+* 
+* Requirements:
+* parallel zu src werden diese Files benötigt:
+* css/theme.blue.css
+* lib/jquery-2.0.3.min.js
+* lib/jquery.tablesorter.min.js
+* lib/jquery.tablesorter.widgets.min.js
 */
 
 import java.util.Iterator;
@@ -435,7 +441,6 @@ public class TrendCheck {
 	
 	String getTableStart(String tableName)
 	{
-		// Besser wohl einen Table und in erste Spalte Tabletype
 		return "<table id=\""+tableName+"\" class=\"tablesorter\">"+
 		"<thead>"+
 		"<tr>"+
@@ -466,23 +471,23 @@ public class TrendCheck {
 		Collections.sort(downTrendNears)
 		outputFile.append(getTableStart("trendInfos"))
 		for (OutputInfo nearOutputInfo : downTrendNears) {
-			outputFile.append(nearOutputInfo.getOutputLinesWithTrends("Downtrend nahe"))
+			outputFile.append(nearOutputInfo.getOutputLinesWithTrends("1. Downtrend nahe"))
 		}
 		//outputFile.append("<br/>DownTrend trendfern: $downTrendNotNears.size<br/>")
 		Collections.sort(downTrendNotNears)
 		for (OutputInfo notNearOutputInfo : downTrendNotNears) {
-			outputFile.append(notNearOutputInfo.getOutputLinesWithTrends("Downtrend fern"))
+			outputFile.append(notNearOutputInfo.getOutputLinesWithTrends("4. Downtrend fern"))
 		}
 		
 		//outputFile.append("<br/>Uptrend trendnah: $upTrendNears.size<br/>")
 		Collections.sort(upTrendNears)
 		for (OutputInfo nearOutputInfo : upTrendNears) {
-			outputFile.append(nearOutputInfo.getOutputLinesWithTrends("Uptrend nahe"))
+			outputFile.append(nearOutputInfo.getOutputLinesWithTrends("2. Uptrend nahe"))
 		}
 		//outputFile.append("<br/>UpTrend trendfern: $upTrendNotNears.size<br/>")
 		Collections.sort(upTrendNotNears)
 		for (OutputInfo notNearOutputInfo : upTrendNotNears) {
-			outputFile.append(notNearOutputInfo.getOutputLinesWithTrends("Uptrend fernd"))
+			outputFile.append(notNearOutputInfo.getOutputLinesWithTrends("3. Uptrend fern"))
 		}
 		outputFile.append(getTableEnd())
 
@@ -543,18 +548,20 @@ public class TrendCheck {
 			trendCheck.check(stocks.get(i),days)
 		}
 		outputFile.write "<html><head>"
-		outputFile.append "<script type=\"text/javascript\" src=\"../lib/jquery-1.10.2.min.js\"></script>"
-		outputFile.append "<script type=\"text/javascript\" src=\"../lib/jquery.tablesorter.min.js\"></script>"
+		outputFile.append "<link href=\"../../css/theme.blue.css\" rel=\"stylesheet\">"
+		outputFile.append "<script type=\"text/javascript\" src=\"../../lib/jquery-2.0.3.min.js\"></script>"
+		outputFile.append "<script type=\"text/javascript\" src=\"../../lib/jquery.tablesorter.min.js\"></script>"
+		outputFile.append "<script type=\"text/javascript\" src=\"../../lib/jquery.tablesorter.widgets.min.js\"></script>"
+		outputFile.append "<script type=\"text/javascript\">"
+		outputFile.append "\$(document).ready(function() {"
+		outputFile.append "\$(\"#trendInfos\").tablesorter( {theme : 'blue', sortList: [[0,0], [6,0]],widgets:['zebra']} );}) "
+		outputFile.append "</script>"
 		outputFile.append "</head><body>"
 		if (trendCheck.relevant == StockValue.CLOSE)
 			outputFile.append("<p><b>Schlusskurse $trendCheck.MONTH Monate $today</b></p>\n")
 		else
 			outputFile.append("<p><b>Tiefstkurse $trendCheck.MONTH Monate $today</b></p>\n")
 		trendCheck.writeOutput(outputFile)
-		outputFile.append "<script type=\"text/javascript\">"
-		outputFile.append "<!-- \$(document).ready(function() { \$(\"#trendInfos\").tablesorter(); } ); "
-		outputFile.append "\$(\"#trendInfos\").tablesorter( {sortList: [[0,0], [1,0]]} ); // -->"
-		outputFile.append "</script>"
 		outputFile.append "</body></html>"
 		println "fertig mit $stocks.size Werten"
 	}
