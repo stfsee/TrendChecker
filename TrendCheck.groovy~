@@ -436,15 +436,14 @@ public class TrendCheck {
 	String getTableStart(String tableName)
 	{
 		// Besser wohl einen Table und in erste Spalte Tabletype
-		return "<table id=\""+tableName+"\" class=\"tablesorter\">"+
+		return "<table id=\""+tableName+" class=\"tablesorter\">"+
 		"<thead>"+
 		"<tr>"+
-			"<th>Trendverhalten</th>"+
 			"<th>Name</th>"+
 			"<th>Current Price</th>"+
+			"<th>Candle</th>"+
 			"<th>Trendstart</th>"+
 			"<th>Letzter Wert</th>"+
-			"<th>Candle Info</th>"+
 			"<th>Trendabstand</th>"+
 			"<th>4 Week P</th>"+
 			"<th>4 Week Var</th>"+
@@ -455,37 +454,29 @@ public class TrendCheck {
 		"<tbody>"
 	}
 	
-	String getTableEnd()
-	{
-		return "</tbody>"+
-		"</table>"
-	}
-	
 	void writeOutput(File outputFile){
-		//outputFile.append("<br/>Downtrend trendnah: $downTrendNears.size<br/>")
+		outputFile.append("<br/>Downtrend trendnah: $downTrendNears.size<br/>")
 		Collections.sort(downTrendNears)
-		outputFile.append(getTableStart("trendInfos"))
+		outputFile.append(getTableStart("downTrendNears"))
 		for (OutputInfo nearOutputInfo : downTrendNears) {
-			outputFile.append(nearOutputInfo.getOutputLinesWithTrends("Downtrend nahe"))
-		}
-		//outputFile.append("<br/>DownTrend trendfern: $downTrendNotNears.size<br/>")
-		Collections.sort(downTrendNotNears)
-		for (OutputInfo notNearOutputInfo : downTrendNotNears) {
-			outputFile.append(notNearOutputInfo.getOutputLinesWithTrends("Downtrend fern"))
-		}
-		
-		//outputFile.append("<br/>Uptrend trendnah: $upTrendNears.size<br/>")
-		Collections.sort(upTrendNears)
-		for (OutputInfo nearOutputInfo : upTrendNears) {
-			outputFile.append(nearOutputInfo.getOutputLinesWithTrends("Uptrend nahe"))
-		}
-		//outputFile.append("<br/>UpTrend trendfern: $upTrendNotNears.size<br/>")
-		Collections.sort(upTrendNotNears)
-		for (OutputInfo notNearOutputInfo : upTrendNotNears) {
-			outputFile.append(notNearOutputInfo.getOutputLinesWithTrends("Uptrend fernd"))
+			outputFile.append(nearOutputInfo.getOutputLinesWithTrends())
 		}
 		outputFile.append(getTableEnd())
-
+		outputFile.append("<br/>DownTrend trendfern: $downTrendNotNears.size<br/>")
+		Collections.sort(downTrendNotNears)
+		for (OutputInfo notNearOutputInfo : downTrendNotNears) {
+			outputFile.append(notNearOutputInfo.getOutputLinesWithTrends())
+		}
+		outputFile.append("<br/>Uptrend trendnah: $upTrendNears.size<br/>")
+		Collections.sort(upTrendNears)
+		for (OutputInfo nearOutputInfo : upTrendNears) {
+			outputFile.append(nearOutputInfo.getOutputLinesWithTrends())
+		}
+		outputFile.append("<br/>UpTrend trendfern: $upTrendNotNears.size<br/>")
+		Collections.sort(upTrendNotNears)
+		for (OutputInfo notNearOutputInfo : upTrendNotNears) {
+			outputFile.append(notNearOutputInfo.getOutputLinesWithTrends())
+		}
 		outputFile.append("<br/>ohne Trend: $noTrends.size<br/>")
 		for (OutputInfo noTrendOutputInfo : noTrends) {
 			outputFile.append(noTrendOutputInfo.getOutputLinesWithoutTrends())
@@ -542,20 +533,11 @@ public class TrendCheck {
 		for (int i = 0; i < stocks.size(); i++) {
 			trendCheck.check(stocks.get(i),days)
 		}
-		outputFile.write "<html><head>"
-		outputFile.append "<script type=\"text/javascript\" src=\"../lib/jquery-1.10.2.min.js\"></script>"
-		outputFile.append "<script type=\"text/javascript\" src=\"../lib/jquery.tablesorter.min.js\"></script>"
-		outputFile.append "</head><body>"
 		if (trendCheck.relevant == StockValue.CLOSE)
-			outputFile.append("<p><b>Schlusskurse $trendCheck.MONTH Monate $today</b></p>\n")
+			outputFile.write("<p><b>Schlusskurse $trendCheck.MONTH Monate $today</b></p>\n")
 		else
-			outputFile.append("<p><b>Tiefstkurse $trendCheck.MONTH Monate $today</b></p>\n")
+			outputFile.write("<p><b>Tiefstkurse $trendCheck.MONTH Monate $today</b></p>\n")
 		trendCheck.writeOutput(outputFile)
-		outputFile.append "<script type=\"text/javascript\">"
-		outputFile.append "<!-- \$(document).ready(function() { \$(\"#trendInfos\").tablesorter(); } ); "
-		outputFile.append "\$(\"#trendInfos\").tablesorter( {sortList: [[0,0], [1,0]]} ); // -->"
-		outputFile.append "</script>"
-		outputFile.append "</body></html>"
 		println "fertig mit $stocks.size Werten"
 	}
 }

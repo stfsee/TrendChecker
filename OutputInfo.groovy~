@@ -185,7 +185,7 @@ class OutputInfo implements Comparable{
 		if (hasInvertedHammerShape())
 		{
 			this.candleTitle = candleTitle+"InvertedHammer: kurzer Körper, der unten sitzt. "
-			this.candleInfo = candleInfo+" InvertedHammer "+Util.formattedDate(last.date)
+			this.candleInfo = candleInfo+" InvertedHammer "+last.date
 		}
 	}
 
@@ -314,33 +314,38 @@ class OutputInfo implements Comparable{
 		checkEngulfing()
 		checkDarkCloudCover()
 		checkMorningStar()
-	}	
+	}
 	
-	String getOutputLinesWithTrends(String title) {
+	String getOutputLinesWithTrends() {
 		String trendDiffFormatted = sprintf("%.2f", trendDiff*100)
 		String currentPriceFormatted = sprintf("%.2f", currentPrice)
 		checkCandles()
-		StringBuffer outLine = new StringBuffer("<tr><td>")
-		outLine.append title + "</td>"
-		outLine.append "<td><a href=\"http://www.comdirect.de/inf/aktien/detail/chart.html?ID_NOTATION="+stock.comdNotationId+"&timeSpan="+period+"M"+indicators+"\" target=\"_blank\">"+stock.name+"</a></td>"
-		outLine.append "<td>"+currentPriceFormatted+"</td>"
-		outLine.append "<td>"+formattedStartDate+"</td>"
-		outLine.append "<td>"+formattedLastValue+"</td>"
+		StringBuffer outLine = new StringBuffer('<a href="http://www.comdirect.de/inf/aktien/detail/chart.html?ID_NOTATION='+stock.comdNotationId+'&timeSpan='+period+'M'+indicators+'" target="_blank">'+stock.name+'</a> '+currentPriceFormatted)
+		outLine.append "<div title=\""
+		outLine.append candleTitle
+		outLine.append "\">"
+		outLine.append "Trendstart: "+formattedStartDate+", letzter Wert = "+formattedLastValue
 		//outLine.append(", Letzter Close: ")
 		//outLine.append last.close + " "
-		outLine.append ("<td><font color=\"#FF0000\"><div title=\"")
-		outLine.append candleTitle+"\">"
-		outLine.append candleInfo
-		outLine.append ("</div></font></td>")
-		outLine.append '<td>'+trendDiffFormatted+'%</td>'
+		if (candleInfo.size() > 1)
+		{
+			outLine.append ("<font color=\"#FF0000\">")
+			outLine.append candleInfo
+			outLine.append ("</font>")
+		}
+		outLine.append ' Abstand zum Trend: '+trendDiffFormatted+'%'
+		
 		double fourWP = getFourWP()
-		outLine.append '<td>'+sprintf("%.2f", fourWP*100)+'%</td>'
-		double fourWVar = getFourWVar()
-		outLine.append '<td><span title="Varianzen der letzten 4 Wochen, basierend auf ROC">'+sprintf("%.2f", fourWVar) + "</span></td>"
-		outLine.append '<td><span title="Performance/Varianz der letzten 4 Wochen">'+sprintf("%.2f", fourWP*100/fourWVar) + "</span></td>"
+		if (fourWP > 0)
+		{
+			outLine.append ' P='+sprintf("%.2f", fourWP*100)+'%'
+			double fourWVar = getFourWVar()
+			outLine.append ' <span title="Varianzen der letzten 4 Wochen, basierend auf ROC"> Var='+sprintf("%.2f", fourWVar) + "</span>"
+			outLine.append ' <span title="Performance/Varianz der letzten 4 Wochen"> P/Var='+sprintf("%.2f", fourWP*100/fourWVar) + "</span>"
+		}
 		double fourWDailyVar = getFourWDailyVar()
-		outLine.append '<td><span title="Mittelwert der täglichen Varianzen der letzten 4 Wochen">'+sprintf("%.2f", fourWDailyVar)
-		outLine.append("</span></td></tr>") 
+		outLine.append ' <span title="Mittelwert der täglichen Varianzen der letzten 4 Wochen">DVarØ='+sprintf("%.2f", fourWDailyVar)
+		outLine.append("</span></div>") 
 		//outLine.append('</br>\n')
 		return outLine
 	}
