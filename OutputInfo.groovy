@@ -219,6 +219,16 @@ class OutputInfo implements Comparable{
 			this.candleInfo = candleInfo+" Dark Cloud Cover "
 		}
 	}
+
+	double getSixMonthP()
+	{
+	    int startIndex = values.size < 120 ? 0 : values.size-120
+		double sixMonthAgo = values.get(startIndex).close
+		double sixMonthP = (this.last.close - sixMonthAgo)/sixMonthAgo
+		println "this last = "+this.last.close
+		println "6 MP = " +sprintf("%.2f", sixMonthP*100)
+		return sixMonthP
+	}
 	
 	double getFourWP()
 	{
@@ -333,6 +343,10 @@ class OutputInfo implements Comparable{
 		outLine.append candleInfo
 		outLine.append ("</div></font></td>")
 		outLine.append '<td>'+trendDiffFormatted+'%</td>'
+		double sixMP = getSixMonthP()
+		int sixMP5 = (int)(sixMP *100/5)+1
+		int sixMPint = sixMP5*5
+		outLine.append '<td><div title="'+sprintf("%.2f", sixMP*100)+'%">'+sixMPint+'%</div></td>'
 		double fourWP = getFourWP()
 		outLine.append '<td>'+sprintf("%.2f", fourWP*100)+'%</td>'
 		double fourWVar = getFourWVar()

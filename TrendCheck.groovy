@@ -451,6 +451,7 @@ public class TrendCheck {
 			"<th>Letzter Wert</th>"+
 			"<th>Candle Info</th>"+
 			"<th>Trendabstand</th>"+
+			"<th><div title=\"6 Month Performance\">6 Month P</div></th>"+
 			"<th>4 Week P</th>"+
 			"<th>4 Week Var</th>"+
 			"<th>P/Var</th>"+
