@@ -54,25 +54,19 @@ public class TrendCheck {
 		return value
 	}
 
-	double getCurrentPrice(String symbol) {
+	double getCurrentPrice(String comdNotationId) {
 		def html = ""
 		def currentPriceUrl =""
 		println "getting current price..."
-//		try {
-//		currentPriceUrl = "http://de.finance.yahoo.com/q?s="+symbol.toUpperCase()+"&ql=0"
-//		html = new XmlSlurper(new SAXParser()).parse(currentPriceUrl)
-//		}catch(java.io.IOException ex)
-//		{
-//			
-//		}
 		def price = ""
-			currentPriceUrl = "http://de.finance.yahoo.com/q/hp?s="+symbol.toUpperCase()
-			html = new XmlSlurper(new SAXParser()).parse(currentPriceUrl)
-			println "parsed..."
+			currentPriceUrl = "http://www.comdirect.de/inf/aktien/detail/uebersicht.html?INDEX_FILTER=true&ID_NOTATION="+comdNotationId
+	                  
+			println currentPriceUrl
+			html = new XmlSlurper(new SAXParser()).parse(currentPriceUrl)			
 			price = html.'**'.findAll {
-				it.@id.text()=="yfs_l84_"+symbol.toLowerCase()
+				it.@class.text()=="price"
 			}[0].toString()
-			println "Got current value from 1st URL"
+			println "COMDIRECT price:" + price
 		
 		if (price == null || price.equals("null")) {
 		try { price = html.'**'.findAll {
@@ -88,7 +82,6 @@ public class TrendCheck {
 		}
 		NumberFormat nf = NumberFormat.getInstance(Locale.GERMAN)
 		println "Price: $price"
-		println "Trying: $symbol"
     try{
 		
     		return nf.parse(price)
@@ -300,6 +293,7 @@ public class TrendCheck {
 	void check(Stock stock, int days) {
 
 		String symbol = stock.symbol
+		String comdNotationId = stock.comdNotationId
 		def lineCount = 0
 		def url = createUrl(symbol, days).toURL()
 		
@@ -313,7 +307,7 @@ public class TrendCheck {
 			return
 		println "\n\n\nAnzahl Werte: $values.size\n\n\n"
 
-		double currentPrice = getCurrentPrice(symbol)
+		double currentPrice = getCurrentPrice(comdNotationId)
 		println "aktueller Preis: $currentPrice"
 
 		StockValue minValue = findMin(values)
