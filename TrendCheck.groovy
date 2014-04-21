@@ -543,7 +543,8 @@ public class TrendCheck {
 			trendCheck.check(stocks.get(i),days)
 		}
 		outputFile.write "<html><head>"
-		outputFile.write "<title>Trendcheck</title>"
+		outputFile.append "<title>Trendcheck</title>"
+		outputFile.append "<link rel=\"icon\" href=\"favicon.ico\" type=\"image/x-icon\">"
 		outputFile.append "<link href=\"../../css/theme.blue.css\" rel=\"stylesheet\">"
 		outputFile.append "<script type=\"text/javascript\" src=\"../../lib/jquery-2.0.3.min.js\"></script>"
 		outputFile.append "<script type=\"text/javascript\" src=\"../../lib/jquery.tablesorter.min.js\"></script>"
